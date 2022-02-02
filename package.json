@@ -1,0 +1,46 @@
+{
+    "name": "thekblog",
+    "author": "Klaus Gubernu",
+    "license": "free",
+    "dependencies": {
+        "@babel/polyfill": "^7.11.5",
+        "@splidejs/splide": "^2.4.21",
+        "cookies-eu-banner": "^2.0.1",
+        "css-minimizer-webpack-plugin": "^3.0.2",
+        "uglify-js": "^3.14.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.11.6",
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "autoprefixer": "^10.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "browser-sync": "^2.26.12",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "css-loader": "^4.3.0",
+        "file-loader": "^6.1.0",
+        "flex-gap-polyfill": "^4.0.6",
+        "html-webpack-plugin": "^5.3.2",
+        "mini-css-extract-plugin": "^0.11.2",
+        "node-sass": "^4.14.1",
+        "postcss": "^8.3.5",
+        "sass": "^1.35.2",
+        "sass-loader": "^10.2.0",
+        "ts-loader": "^8.2.0",
+        "typescript": "^4.3.5",
+        "url-loader": "^4.1.0",
+        "vanillajs-datepicker": "^1.1.4",
+        "webpack": "^5.46.0",
+        "webpack-cli": "^4.7.2",
+        "webpack-merge": "^5.8.0"
+    },
+    "scripts": {
+        "prod": "webpack --config webpack.prod.js",
+        "dev": "webpack --mode development --watch --config webpack.dev.js"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    }
+}
