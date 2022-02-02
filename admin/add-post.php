@@ -19,7 +19,7 @@ if (isset($_SESSION["logged_in"])) {
             $query->bindValue(1, $title);
             $query->bindValue(2, $content);
             $query->bindValue(3, time());
-            $query->bindValue(4, $thumnbail);
+            $query->bindValue(4, $thumbnail);
             $query->execute();
             header('Location: index.php');
         }
