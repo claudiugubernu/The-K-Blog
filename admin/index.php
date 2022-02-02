@@ -38,7 +38,6 @@ if (isset($_SESSION["logged_in"])) {
         <a href="index.php">
             <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
         </a>
-        <a href="admin/">Sign In</a>
     </div>
 </nav>
 
