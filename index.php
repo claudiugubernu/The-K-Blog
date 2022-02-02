@@ -14,7 +14,7 @@ $posts = $db_posts->fetch_all();
 <nav>
     <div class="nav-wrapper">
         <a href="index.php">
-            <img src="" alt="Site logo"/>
+            <img src="assets/img/Logo2.png" alt="Site logo"/>
         </a>
         <?php if (!isset($_SESSION["logged_in"])) { ?>
         <a href="admin">Sign In</a>
@@ -23,14 +23,14 @@ $posts = $db_posts->fetch_all();
 </nav>
 <div id="content" class="archive-wrapper">
     <div class="post-grid">
-        <?php 
+        <?php
             if($posts) {
-                foreach ($posts as $post) { ?>
+                foreach ($posts as $post) {?>
                     <a href="single.php?id=<?php echo $post['post_id'] ?>">
                         <div class="post-card" id="<?php echo $post['post_id'] ?>">
                             <div class="post-card-img">
                             <?php if($post['post_thumbnail']) { ?>
-                                <img src="<?php echo url() . $post['post_thumbnail']?>" class="post-thumbnail">
+                                <img src="<?php echo $post['post_thumbnail']?>" class="post-thumbnail">
                             <?php } ?>
                             </div>
                             <div class="post-card-title">
