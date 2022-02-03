@@ -1,0 +1,211 @@
+@mixin xs-up {
+  @media (min-width: #{$screen-xs + 1}) {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media (min-width: #{$screen-sm  + 1}) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media (min-width: #{$screen-md  + 1}) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media (min-width: #{$screen-lg  + 1}) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: #{$screen-xl  + 1}) {
+    @content;
+  }
+}
+
+@mixin hg-up {
+  @media (min-width: #{$screen-hg  + 1}) {
+    @content;
+  }
+}
+@mixin ms-up {
+  @media (min-width: #{$screen-ms  + 1}) {
+    @content;
+  }
+}
+
+@mixin xs-down {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin xl-down {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin hg-down {
+  @media (max-width: #{$screen-hg}) {
+    @content;
+  }
+}
+
+@mixin ms-down {
+  @media (max-width: #{$screen-ms}) {
+    @content;
+  }
+}
+
+@include xs-down() {
+  .xs-hide-down {
+    display: none !important;
+  }
+}
+
+@include sm-down() {
+  .sm-hide-down {
+    display: none !important;
+  }
+}
+
+@include md-down() {
+  html body .md-hide-down {
+    display: none !important;
+  }
+}
+
+@include lg-down() {
+  .lg-hide-down {
+    display: none !important;
+  }
+}
+
+@include xl-down() {
+  .xl-hide-down {
+    display: none !important;
+  }
+}
+
+@include xs-down() {
+  .xs-hide-up {
+    display: none !important;
+  }
+}
+
+@include sm-up() {
+  .sm-hide-up {
+    display: none !important;
+  }
+}
+
+@include md-up() {
+  html body .md-hide-up {
+    display: none !important;
+  }
+}
+
+@include lg-up() {
+  .lg-hide-up {
+    display: none !important;
+  }
+}
+
+@include xl-up() {
+  .xl-hide-up {
+    display: none !important;
+  }
+}
+
+.document-hide {
+  display: none;
+}
+
+.document-sr-text,
+.screen-reader-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.document-sr-text .focusable:active,
+.document-sr-text .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+@mixin site-width {
+  max-width: 100%;
+  width: $default-screen-width;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.site-width {
+  @include site-width;
+
+  &.extra-small {
+    max-width: $screen-xs;
+  }
+
+  &.small {
+    max-width: $screen-sm;
+  }
+
+  &.medium {
+    max-width: $screen-md;
+  }
+
+  &.large {
+    max-width: $screen-lg;
+  }
+
+  &.extra-large {
+    max-width: $screen-xl;
+  }
+}
+
+.align-right,
+.align-left {
+  display: flex;
+}
+
+.align-right {
+  justify-content: flex-end;
+}
+
+.align-left > * {
+}

@@ -1,0 +1,16 @@
+$types: flex, block, grid, none;
+
+// display
+@each $type in $types {
+    .#{$type} {
+        display: $type;
+    }
+}
+
+@include sm-down() {
+    @each $type in $types {
+        .m-#{$type} {
+            display: $type;
+        }
+    }
+}

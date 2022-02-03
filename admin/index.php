@@ -52,6 +52,10 @@ if (isset($_SESSION["logged_in"])) {
         <input type="password" name="password" placeholder="Password">
         <input type="submit" value="Login">
     </form>
+    <div class="flex gap-10">
+        <p class="fs-12">No account?</p>
+        <a href="../index.php">Go back</a>
+    </div>
 
 <?php include('footer.php'); ?> 
 

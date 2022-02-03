@@ -1,0 +1,14 @@
+// Import managing z-indexing
+@each $size in $zindex {
+    .z-#{$size} {
+        z-index: $size;
+    }
+}
+
+@include sm-down() {
+    @each $size in $zindex {
+        .m-z-#{$size} {
+            z-index: $size;
+        }
+    }
+}

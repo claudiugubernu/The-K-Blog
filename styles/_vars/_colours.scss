@@ -1,0 +1,50 @@
+// Handle all colours throughout the theme
+
+:root {
+  /* Colours Defaults */
+  /* ------ */
+  --color-light-grey: #EEE2DC;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #404040;
+  --color-primary-faded: rgb(8, 35, 64, 0.3);
+  --color-secondary: #4D6D9A;
+  --color-tertiary: transparent;
+  --color-quaternary: transparent;
+  --color-quinary: transparent;
+  --color-senary: transparent;
+  --color-septenary: transparent;
+  --color-octonary: transparent;
+}
+
+.c-white {
+  color: var(--color-white);
+}
+
+.c-black {
+  color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.c-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.c-primary-faded {
+  color: var(--color-primary-faded);
+}
+
+.c-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}

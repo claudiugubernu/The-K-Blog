@@ -1,0 +1,15 @@
+.blue-btn {
+    background-color: var(--color-secondary);
+    padding: 10px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}

@@ -7,12 +7,14 @@ var path = require('path');
 // change these variables to fit your project
 const jsPath= './scripts';
 const cssPath = './styles';
+const cssAdminPath = 'admin/admin-styles/'
 const outputPath = 'static';
 const localDomain = 'http://the-k-blog.local';
 const entryPoints = {
   // 'app' is the output name, people commonly use 'bundle'
   // you can have more than 1 entry point
   'app': jsPath + '/app.js',
+  'admin-styles' : cssAdminPath + '/admin-styles.scss'
 };
 
 module.exports = {
