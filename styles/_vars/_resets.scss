@@ -4,7 +4,25 @@
     box-sizing: border-box;
 }
 
+body {
+    @extend .ff-1;
+}
+
 a {
     text-decoration: none;
     color: var(--color-primary);
+}
+
+.error {
+    color: var(--color-quinary);
+}
+
+input,
+textarea,
+button {
+    border: none;
+}
+
+ul {
+    list-style-type: none;
 }

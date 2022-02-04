@@ -25,7 +25,7 @@ if (isset($_SESSION["logged_in"])) {
                 header('Location: index.php');
                 exit();
             } else {
-                $error = 'Incorrect details entered';
+                $error = 'Username/Password details incorrect';
             }
         }
     }
@@ -33,30 +33,27 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<nav>
-    <div class="nav-wrapper">
-        <a href="index.php">
-            <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
-        </a>
-    </div>
-</nav>
+<div id="content" class="sign-in-wrapper site-width flex bg-dark-grey flex-column justify-center align-items-center m-auto">
+    <a href="index.php">
+        <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
+    </a>
 
-<?php if (isset($error)) { ?>
-    <div class="login-error">
-        <p><?php echo $error ?></p>
-    </div>
-<?php } ?>
+    <?php if (isset($error)) { ?>
+        <div class="login-error">
+            <p class="error"><?php echo $error ?></p>
+        </div>
+    <?php } ?>
 
-    <form action="index.php" method="post"> 
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Login">
+    <form action="index.php" method="post" class="mt-10 mb-30 flex flex-column"> 
+        <input type="text" class="mb-10 p-10" name="username" placeholder="Username">
+        <input type="password" class="mb-10 p-10" name="password" placeholder="Password">
+        <input type="submit" class="mb-10 blue-btn" value="Login">
     </form>
-    <div class="flex gap-10">
-        <p class="fs-12">No account?</p>
-        <a href="../index.php">Go back</a>
+    <div class="flex align-items-center gap-10">
+        <p class="fs-14 c-light-grey">No account?</p>
+        <a href="../index.php" class="c-light-blue">Go Back</a>
     </div>
-
+</div>
 <?php include('footer.php'); ?> 
 
 <?php }

@@ -26,7 +26,7 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="admin-wrapper">
+<div class="admin-wrapper flex align-items-center bg-tertiary">
 
     <?php include('admin-nav.php'); ?>
 
