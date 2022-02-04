@@ -1,0 +1,102 @@
+// Handle all fonts
+
+:root {
+  /* Fonts Defaults */
+  /* ------ */
+  --font-family-default: "Roboto", sans-serif;
+  --font-family-secondary: "Roboto", serif;
+}
+
+// Default Paragraph Styling
+p {
+  font-family: var(--font-family-default);
+}
+
+// Font Family
+.ff-1 {
+  font-family: var(--font-family-default);
+  font-weight: 400;
+
+  i {
+    font-style: italic;
+  }
+}
+
+// Text Shadows
+.t-shadow {
+  text-shadow: 1px 1px 30px rgba(0, 0, 0, 1);
+}
+
+// Light
+.tt-light {
+  font-weight: 300;
+}
+
+.tt-italic {
+  font-style: italic;
+}
+
+// Underline
+.tt-underline {
+  text-decoration: underline;
+}
+
+// Uppercase
+.tt-uppercase {
+  text-transform: uppercase;
+}
+
+// Bold font size
+b,
+strong,
+.tt-bold {
+  font-weight: 700;
+}
+
+.fs-14 {
+  font-size: 14px;
+
+  @include sm-down() {
+    font-size: 14px;
+  }
+}
+
+.fs-16 {
+  font-size: 16px;
+
+  @include sm-down() {
+    font-size: 16px;
+  }
+}
+
+.fs-24 {
+  font-size: 24px;
+
+  @include sm-down() {
+    font-size: 20px;
+  }
+}
+
+.fs-36 {
+  font-size: 36px;
+
+  @include sm-down() {
+    font-size: 28px;
+  }
+}
+
+.fs-50 {
+  font-size: 50px;
+
+  @include sm-down() {
+    font-size: 30px;
+  }
+}
+
+.fs-100 {
+  font-size: 100;
+
+  @include sm-down() {
+    font-size: 60px;
+  }
+}

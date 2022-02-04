@@ -1,0 +1,100 @@
+// Handle all colours throughout the theme
+
+:root {
+  /* Colours Defaults */
+  /* ------ */
+  --color-error: #E34234;
+  --color-light-grey: #eee2dc;
+  --color-light-blue: #91c4ff;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #404040;
+  --color-dark-grey: #5F6366;
+  --color-secondary: #989ea5;
+  --color-tertiary: #99A6C0;
+  --color-quaternary: #2B415F;
+  --color-quinary: #F58FA1;
+  --color-senary: #4D6D9A;
+  --color-septenary: transparent;
+  --color-octonary: transparent;
+}
+
+.c-white {
+  color: var(--color-white);
+}
+
+.c-black {
+  color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.c-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.c-primary-faded {
+  color: var(--color-primary-faded);
+}
+
+.c-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.c-tertiary {
+  color: var(--color-tertiary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.c-quaternary {
+  color: var(--color-quaternary);
+}
+
+.bg-quaternary {
+  background-color: var(--color-quaternary);
+}
+
+.c-senary {
+  color: var(--color-senary);
+}
+
+.bg-senary {
+  background-color: var(--color-senary);
+}
+
+.c-dark-grey {
+  color: var(--color-dark-grey);
+}
+
+.bg-dark-grey {
+  background-color: var(--color-dark-grey);
+}
+
+.c-light-grey {
+  color: var(--color-light-grey);
+}
+
+.bg-light-grey {
+  background-color: var(--color-light-grey);
+}
+
+.c-light-blue {
+  color: var(--color-light-blue);
+}
+
+.bg-light-blue {
+  background-color: var(--color-light-blue);
+}

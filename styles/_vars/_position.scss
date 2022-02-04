@@ -1,0 +1,44 @@
+// Handle all positioning
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.p-fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.static {
+    position: static;
+}
+
+@include sm-down() {
+    .m-absolute {
+        position: absolute;
+    }
+
+    .m-relative {
+        position: relative;
+    }
+
+    .m-p-fixed,
+    .m-fixed {
+        position: fixed;
+    }
+
+    .m-sticky {
+        position: sticky;
+    }
+
+    .m-static {
+        position: static;
+    }
+}
