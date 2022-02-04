@@ -1,9 +1,15 @@
 .admin-nav {
     height: 100%;
+    width: 25%;
 
     .admin-logo {
         width: 80px;
         align-self: center;
+    }
+
+
+    .home-icon {
+        fill: var(--color-light-grey);
     }
 
     .admin-open-site {

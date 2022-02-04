@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 include_once('includes/connection.php');
 include_once('includes/posts.php');
 include_once('functions.php');

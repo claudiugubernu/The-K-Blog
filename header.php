@@ -16,5 +16,11 @@
                 <?php if (!isset($_SESSION["logged_in"])) { ?>
                 <a href="admin" class="blue-btn">Sign In</a>
                 <?php } ?>
+                <?php if (isset($_SESSION["logged_in"])) { ?>
+                    <a href="admin" class="">
+                        <img src="static/icons/admin-with-cogwheels.png" class="icon-30" alt="Admin Panel Icon">
+                    </a>
+
+                <?php } ?>
             </div>
         </nav>

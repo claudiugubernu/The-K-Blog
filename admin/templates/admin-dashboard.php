@@ -30,9 +30,10 @@ if (isset($_SESSION["logged_in"])) {
 
     <?php include('admin-nav.php'); ?>
 
-    <div class="admin-dashboard-wrapper">
-        <div class="admin-dashboard-top">
-            <p class="admin-sign-out">Hello, <?php echo $username ?> </p><a href="logout.php" class="admin-sign-out-link">(logout)</a>
+    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+        <div class="admin-dashboard-top align-self-end flex align-items-center">
+            <p class="admin-sign-out c-light-grey">Hello, <?php echo ucfirst($username); ?> </p>
+            <a href="logout.php" class="admin-sign-out-link">(logout)</a>
         </div>
         <div class="admin-dashboard-bottom">
             <div class="dashboard-wrapper-top">
