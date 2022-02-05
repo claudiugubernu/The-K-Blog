@@ -32,21 +32,19 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="admin-wrapper">
+<div class="admin-wrapper flex bg-tertiary">
 
     <?php include('templates/admin-nav.php'); ?>
 
-    <div class="admin-dashboard-wrapper">
-        <div class="admin-dashboard-top">
-            <p class="admin-sign-out">Hello, <?php echo $username ?></p><a href="logout.php">(logout)</a>
-        </div>
-        <div class="admin-posts-bottom">
-            <p class="add-post-title-label">Title</p>
-            <form action="add-post.php" method="post">
-                <input type="text" name="title"/>
-                <input type="file" accept="image/*" name="thumbnail"/>
-                <textarea rows="25" name="content"></textarea>
-                <input type="submit" value="PUBLISH" class="btn green-btn"/>
+    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+        <?php include('templates/admin-logout.php'); ?> 
+        <div class="admin-posts-bottom mv-auto c-light-grey">
+            <p class="add-post-title-label mb-10 fs-24">Title</p>
+            <form action="add-post.php" method="post" class="flex flex-column ff-1">
+                <input type="text" name="title" class="mb-10 p-10 bg-senary c-light-grey"/>
+                <input type="file" accept="image/*" name="thumbnail" class="mv-10"/>
+                <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"></textarea>
+                <input type="submit" value="PUBLISH" class="btn green-btn mv-20"/>
             </form>
         </div>
         <?php if (isset($error)) { ?>

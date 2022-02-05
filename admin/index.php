@@ -33,7 +33,7 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div id="content" class="sign-in-wrapper site-width flex bg-dark-grey flex-column justify-center align-items-center m-auto">
+<div id="content" class="sign-in-wrapper site-width flex flex-column justify-center align-items-center m-auto">
     <a href="index.php">
         <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
     </a>

@@ -17,7 +17,7 @@
 }
 
 .green-btn {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-add);
     padding: 10px 30px;
     color: var(--color-light-grey);
     opacity: 1;
@@ -35,7 +35,7 @@
 }
 
 .red-btn {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-delete);
     padding: 10px 30px;
     color: var(--color-light-grey);
     opacity: 1;
@@ -53,7 +53,7 @@
 }
 
 .yellow-btn {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-edit);
     padding: 10px 30px;
     color: var(--color-light-grey);
     opacity: 1;

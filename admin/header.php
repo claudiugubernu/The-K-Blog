@@ -7,4 +7,4 @@
         <title>The K Blog</title>
         <link rel="stylesheet" href="../static/app.css" />
     </head>
-        <body>
+        <body class="bg-dark-grey">

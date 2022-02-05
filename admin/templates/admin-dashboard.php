@@ -31,19 +31,16 @@ if (isset($_SESSION["logged_in"])) {
     <?php include('admin-nav.php'); ?>
 
     <div class="admin-dashboard-wrapper p-30 flex flex-column">
-        <div class="admin-dashboard-top align-self-end flex align-items-center">
-            <p class="admin-sign-out c-light-grey">Hello, <?php echo ucfirst($username); ?> </p>
-            <a href="logout.php" class="admin-sign-out-link">(logout)</a>
-        </div>
-        <div class="admin-dashboard-bottom">
-            <div class="dashboard-wrapper-top">
-                <div class="admin-left-card half-card">
-                    <p class="admin-left-card-title">Number of Posts</p>
-                    <p class="admin-left-card-content"><?php echo $total_posts ?></p>
+        <?php include('templates/admin-logout.php'); ?> 
+        <div class="admin-dashboard-bottom flex flex-column justify-center">
+            <div class="dashboard-wrapper-top flex gap-30 mb-50">
+                <div class="admin-left-card w-25 m-w-100 p-50 flex flex-column">
+                    <p class="admin-left-card-title mb-10">Number of Posts</p>
+                    <p class="admin-left-card-content fs-100 align-self-center"><?php echo $total_posts ?></p>
                 </div>
-                <div class="admin-right-card half-card">
-                    <form action="index.php" method="post">
-                        <label class="admin-right-card-title">Quick Delete</label>
+                <div class="admin-right-card w-25 m-w-100 p-50 flex flex-column align-items-center">
+                    <form action="index.php" method="post" class="flex flex-column justify-between">
+                        <label class="admin-right-card-title mb-10">Quick Delete</label>
                         <select name="post-id">
                             <option disabled selected>Select a post</option>
                             <?php  foreach ($posts as $post) {?> 
@@ -54,9 +51,9 @@ if (isset($_SESSION["logged_in"])) {
                     </form>
                 </div>
             </div>
-            <div class="dashboard-wrapper-bottom">
-                <p class="quick-link-title">Quick Links</p>
-                <div class="quick-link-btns">
+            <div class="dashboard-wrapper-bottom w-100 p-50 flex flex-column justify-start">
+                <p class="quick-link-title mb-20">Quick Links</p>
+                <div class="quick-link-btns flex">
                     <a href="add-post.php" class="btn green-btn">ADD POST</a>
                 </div>
             </div>
