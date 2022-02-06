@@ -20,7 +20,7 @@ $posts = $db_posts->fetch_all();
                     <div class="post-card inherit-link" id="<?php echo $post['post_id'] ?>">
                         <div class="post-card-img">
                         <?php if($post['post_thumbnail']) { ?>
-                            <img src="<?php echo $post['post_thumbnail']?>" class="post-thumbnail">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['post_thumbnail']); ?>" />
                         <?php } ?>
                         </div>
                         <div class="post-card-title">
