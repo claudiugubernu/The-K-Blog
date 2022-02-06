@@ -1,0 +1,41 @@
+.w-25 {
+    width: 25%;
+}
+
+.m-w-25 {
+    @include sm-down() {
+        width: 25%;
+    }
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.m-w-50 {
+    @include sm-down() {
+        width: 50%;  
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.m-w-100 {
+    @include sm-down() {
+        width: 100%;  
+    }
+}
+
+.error {
+    color: var(--color-quinary);
+}
+
+.icon-20 {
+    width: 20px;
+}
+
+.icon-30 {
+    width: 30px;
+}

@@ -2,12 +2,33 @@
     height: 100vh;
 
     .admin-dashboard-wrapper {
-        width: 75%;
+        width: 80%;
         height: 100%;
 
-        .admin-sign-out-link {
-            font-size: 12px;
-            margin-left: 5px;
+        .admin-dashboard-bottom {
+            height: 100%;
+        }
+
+        .admin-left-card,
+        .admin-right-card,
+        .dashboard-wrapper-bottom {
+            background-color: var(--color-senary);
+            color: var(--color-light-grey);
+        }
+
+        form {
+            height: 100%;
+
+            select {
+                border: none;
+                padding: 10px;
+                background-color: var(--color-tertiary);
+                color: var(--color-light-grey);
+            }
+        }
+
+        .dashboard-wrapper-bottom  {
+            min-height: 300px;
         }
     }
 }
