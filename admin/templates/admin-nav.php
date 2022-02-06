@@ -17,6 +17,10 @@
                 <a href="posts.php" class="c-light-grey">Posts</a>
             </li>
             <li class="admin-nav-item flex gap-10 align-items-center mv-10">
+                <img src="../../static/icons/gallery.svg" class="icon-30 add-post" alt="Add post icon">
+                <a href="gallery.php" class="c-light-grey">Gallery</a>
+            </li>
+            <li class="admin-nav-item flex gap-10 align-items-center mv-10">
                 <img src="../../static/icons/user-settings.svg" class="icon-30 user-settings" alt="User Settings icon">
                 <a href="user-settings.php" class="c-light-grey">User Setting</a>
             </li>
