@@ -3,14 +3,17 @@
 session_start();
 
 include_once('../includes/connection.php');
-
 include_once('../includes/posts.php');
+include_once('delete-post.php');
 
 if (isset($_SESSION["logged_in"])) { 
     $username = $_SESSION['username'];
     // Get Posts so we're able to get necessary details for admin dashboard
     $db_posts = new Posts;
     $posts = $db_posts->fetch_all();
+
+    // Check which post has been selected
+
 } else {
     header('Location: index.php');
 }
@@ -40,7 +43,7 @@ $i=0;
                     <?php foreach ($posts as $post) { ?> 
                         <div class="grid-body grid c-light-grey pv-10 ph-10 <?php if ( $i % 2 !=0 ) { echo "bg-senary"; } ?> ">
                             <div class="grid-body-id flex align-items-center gap-10">
-                                <input type="checkbox" name="selected-post" value="<?php $post['post_id'] ?>">
+                                <input type="checkbox" name="selected-post" value="<?php echo $post['post_id'] ?>">
                                 <p><?php echo $post['post_id'] ?></p>  
                             </div>   
                             <p><?php echo $post['post_title'] ?></p>     
