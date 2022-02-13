@@ -3,6 +3,20 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         align-self: flex-start;
-    }
+        
+        .admin-gallery-img {
+            height: 300px;
+            width: 400px;
+            display: block;
+            overflow: hidden;
+            background-color: var(--color-senary);
 
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                padding: 10px;
+            }
+        }
+    }
 }

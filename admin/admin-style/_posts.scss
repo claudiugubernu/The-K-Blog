@@ -3,4 +3,20 @@
     .grid-body {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .post-row {
+        cursor: pointer;
+
+        &:hover {
+            .edit-link {
+                display: block;
+            }
+        }
+
+        .edit-link {
+            display: none;
+        }
+    }
+
+    
 }
