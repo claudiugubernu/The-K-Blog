@@ -37,6 +37,7 @@ if (isset($_SESSION["logged_in"])) {
             $query->bindValue(3, time());
             $query->bindValue(4, $img_to_db);
             $query->execute();
+            header('Location: posts.php');
         }
     }
 
