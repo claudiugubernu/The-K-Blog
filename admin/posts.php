@@ -63,7 +63,7 @@ if (isset($_POST['delete_post'])) {
                     <p class="ff-16 c-add"><?php echo $succes_message ?> </p>
                 <?php   } 
                     if (isset($error_message)) { ?>
-                        <p class="ff-16 c-delete"><?php echo $error_message; ?> </p>
+                        <p class="ff-16 c-error"><?php echo $error_message; ?> </p>
                 <?php } ?>
                 </div>
                 <div class="admin-posts-bottom mv-50">

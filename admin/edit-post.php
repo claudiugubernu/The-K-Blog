@@ -17,17 +17,17 @@ if (isset($_SESSION["logged_in"])) {
 
         $post_data = $query->fetch();
     } else {
-        $error = 'ID not found';
+        $no_id_error = 'ID not found';
     }
     // Update post
     if (isset($_POST["update_post"])) {
         // Check if title exists
         if (isset($_POST["title"])) {
-            // Get all data from post
-            $current_post_id = $_GET['post_id'];
+            //Get all data from post
             $title = $_POST['title'];
             $content = nl2br($_POST['content']);
-            $current_post_id = $_POST['post_id'];
+            $img_to_db = "/";
+            $current_post_id = $_POST['current_post_id'];
             // IMAGE UPDATE FUNCTIONALITY //
 
 
@@ -35,23 +35,27 @@ if (isset($_SESSION["logged_in"])) {
             
             // Prepare and Run query
             try {
-                $query = $pdo->prepare('UPDATE posts SET (post_title = ?, post_content = ?, post_timestamp = ?) WHERE post_id = ? LIMIT 1');
+                $query = $pdo->prepare('UPDATE posts SET post_title=?, post_content=?, post_timestamp=?, post_thumbnail=? WHERE post_id=?');
                 $query->bindValue(1, $title);
                 $query->bindValue(2, $content);
                 $query->bindValue(3, time());
-                $query->bindValue(4, $current_post_id);
-                $query->execute();
-                echo '<p class="fs-16 c-add">Post Successfully updated!</p>';
-                header('Location: edit-post.php?post_id=' . $curent_post_id);
+                $query->bindValue(4, $img_to_db);
+                $query->bindValue(5, $current_post_id);
 
+                $query_execute = $query->execute();
+
+                if($query_execute = $query->execute()) {
+                    $success_message =  'Post Successfully updated!';
+                    header('Location: edit-post.php?post_id=' . $curent_post_id);
+                } else {
+                    $error_message =  'Unknown error. Please try again.';
+                }
             } catch(PDOException $e) {
-                $e = 'An error has occured. Please try again later';
+                echo $e->getMessage();
             }
-            
-
         } else {
             // Ask for title to be added
-            $error = 'Title field is required';
+            $no_title_error = 'Title field is required';
         }
     }
 } else {
@@ -70,16 +74,23 @@ if (isset($_SESSION["logged_in"])) {
         <?php include('templates/admin-logout.php'); ?> 
 
         <div class="admin-posts-bottom mv-auto c-light-grey">
-            <?php 
+            <?php if(isset($success_message)) { ?>
+                <p class="fs-16 c-add"><?php echo $success_message ?></p>
+            <?php } ?> 
+            
+            <?php if(isset($error_message)) { ?>
+                <p class="fs-16 c-error"><?php echo $error_message ?></p>
+            <?php } ?> 
+            <?php
             if (isset($_GET['post_id'])) { ?>
                 <p class="add-post-title-label mb-10 fs-24">Title</p>
-                <?php if (isset($error)) { ?>
+                <?php if (isset($no_title_error)) { ?>
                     <div class="error mv-10">
-                        <p><?php echo $error ?></p>
+                        <p><?php echo $no_title_error ?></p>
                     </div>
                 <?php } ?>
-                <form action="edit-post.php" method="post" enctype="multipart/form-data" class="flex flex-column ff-1">
-                    <input type="hidden" name="post_id" value="<?php echo $_POST['post_id'] ?>"/>
+                <form method="post" enctype="multipart/form-data" class="flex flex-column ff-1">
+                    <input type="hidden" name="current_post_id" value="<?php echo $post_data['post_id'] ?>"/>
                     <input type="text" name="title" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $post_data['post_title'] ?>"/>
                     <?php if (isset($statusMsg)) { ?>
                         <div class="c-green mv-10">
@@ -98,7 +109,7 @@ if (isset($_SESSION["logged_in"])) {
                     <input type="submit" name="update_post" value="UPDATE" class="btn green-btn mv-20"/>
                 </form>
             <?php } else {
-                echo $error;
+                echo $no_id_error;
             }?>
         </div>
     </div>
