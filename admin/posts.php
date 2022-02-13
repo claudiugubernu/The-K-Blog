@@ -18,15 +18,28 @@ $i=0;
 
 // Delete Posts
 if (isset($_POST['delete_post'])) {
-    // Get all selected checkboxes(ids) in an array
-    $post_ids = $_POST['selected-post_id'];
-    
-    foreach ($post_ids as $id) {
-        // Build and Run query
-        $query = $pdo->prepare('DELETE FROM posts WHERE post_id = ?');
-        $query->bindValue(1, $id);
-        $query->execute();
-        header('Location: posts.php');
+    if(isset($_POST['selected-post_id'])) {
+        // Get all selected checkboxes(ids) in an array
+        $post_ids = $_POST['selected-post_id'];
+   
+        if($post_ids) {
+            foreach ($post_ids as $id) {
+                // Build and Run query
+                $query = $pdo->prepare('DELETE FROM posts WHERE post_id = ?');
+                $query->bindValue(1, $id);
+                $query_execute = $query->execute();
+        
+                if ($query_execute) {
+                    $succes_message = 'Record(s) deleted successfully';
+                } else {
+                    $error_message = 'Unable to delete record(s). Please try again.';
+                }
+            }
+        } else {
+            $error_message = 'Unable to delete record(s). Please try again.';
+        } 
+    } else {
+        $error_message = 'Unable to delete record(s). Please try again.';
     }
 }
 
@@ -45,6 +58,14 @@ if (isset($_POST['delete_post'])) {
                     <input class="btn red-btn" type="submit" name="delete_post" value="DELETE POST">
                 </div>
         <?php } ?>
+                <div class="session-status">
+                <?php if (isset($succes_message)) { ?>
+                    <p class="ff-16 c-add"><?php echo $succes_message ?> </p>
+                <?php   } 
+                    if (isset($error_message)) { ?>
+                        <p class="ff-16 c-delete"><?php echo $error_message; ?> </p>
+                <?php } ?>
+                </div>
                 <div class="admin-posts-bottom mv-50">
                     <div class="dashboard-posts-wrapper">
                         <?php if (!empty($posts)) { ?>
