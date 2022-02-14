@@ -47,7 +47,7 @@ if (isset($_POST['delete_post'])) {
 
 <?php include('header.php'); ?>
 
-<div class="posts-wrapper admin-wrapper flex align-items-center bg-tertiary">
+<div class="posts-wrapper admin-wrapper flex md-flex-column align-items-center bg-tertiary">
     <?php include('templates/admin-nav.php'); ?>
     <div class="admin-dashboard-wrapper p-30 flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
