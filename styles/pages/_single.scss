@@ -1,5 +1,6 @@
 .single-post-wrapper {
     .post-banner {
+        height: calc(100vh - 85px);
         &:after {
             content: "";
             position: absolute;
@@ -8,6 +9,11 @@
             left: 0;
             right: 0;
             background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%);
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
         }
     }
 

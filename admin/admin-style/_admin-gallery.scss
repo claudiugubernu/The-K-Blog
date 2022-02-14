@@ -1,8 +1,9 @@
 .admin-gallery-wrapper {
     .admin-gallery {
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 20px;
         align-self: flex-start;
+        margin: auto;
         
         .admin-gallery-img {
             height: 300px;

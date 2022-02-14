@@ -1,6 +1,11 @@
 .admin-nav {
     height: 100%;
-    width: 20%;
+    width: 15%;
+    min-width: 250px;
+
+    @include md-down() {
+        width: 100%;
+    }
 
     .admin-logo {
         width: 80px;

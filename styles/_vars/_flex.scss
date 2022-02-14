@@ -43,6 +43,15 @@
     flex-direction: column-reverse;
 }
 
+@include md-down() {
+    .md-flex-column {
+        flex-direction: column;
+    }
+    .md-flex-column-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
 @include sm-down() {
     .m-flex-column {
         flex-direction: column;
