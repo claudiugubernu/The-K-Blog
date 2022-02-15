@@ -28,6 +28,10 @@ if (isset($_SESSION["logged_in"])) {
                 <input type="email" name="email" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $_SESSION['email'] ?>" readonly/>
             </div>
             <div class="form-row flex flex-column">
+                <label for="secret_word" class="mb-10 fs-16 c-light-grey">Secret Word</label>
+                <input type="text" name="secret_word" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $_SESSION['secret_word'] ?>" />
+            </div>
+            <div class="form-row flex flex-column">
                 <label for="current_password" class="mb-10 fs-16 c-light-grey">Current Password</label>
                 <input type="password" name="current_password" class="mb-10 p-10 bg-senary c-light-grey" />
             </div>
