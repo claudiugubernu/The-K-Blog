@@ -63,15 +63,14 @@ if (isset($_SESSION["logged_in"])) {
             <?php } ?>
             <form action="add-post.php" method="post" enctype="multipart/form-data" class="flex flex-column ff-1">
                 <input type="text" name="title" class="mb-10 p-10 bg-senary c-light-grey"/>
-                <label for="image" class="btn mv-10">Thumbnail Image</label>
-                <!-- MAX_FILE_SIZE must precede the file input field -->
-                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
                 <?php if (isset($statusMsg)) { ?>
                     <div class="c-green mv-10">
                         <p><?php echo $statusMsg ?></p>
                     </div>
                 <?php } ?>
-                <input type="file" accept="image/png, image/jpeg, image/jpg" style="display:none;" id="image" name="image" />
+                <!-- MAX_FILE_SIZE must precede the file input field -->
+                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
+                <input type="file" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
                 <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"></textarea>
                 <input type="submit" name="submit" value="PUBLISH" class="btn green-btn mv-20"/>
             </form>
