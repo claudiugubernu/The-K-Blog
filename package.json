@@ -4,6 +4,7 @@
     "license": "free",
     "dependencies": {
         "@babel/polyfill": "^7.11.5",
+        "@mui/icons-material": "^5.4.2",
         "@splidejs/splide": "^2.4.21",
         "cookies-eu-banner": "^2.0.1",
         "css-minimizer-webpack-plugin": "^3.0.2",

@@ -1,6 +1,35 @@
 .edit-post {
-    .edit-single-post-img {
+    .thumbnail-img {
         width: 200px;
         max-height: 200px;
+        cursor: pointer; 
+
+        &:hover {
+            .delete-img-icon {
+                display: block;
+            }
+        }
+    }
+
+    .edit-single-post-img {
+        width: 100%;
+    }
+
+    .delete-img-icon {
+        width: 20px;
+        top: 0;
+        right: 0;      
+        margin-top: 10px;
+        margin-right: 5px;
+        cursor: pointer;  
+        display: none;
+    } 
+
+    .upload-thumbnail {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
     }
 }
