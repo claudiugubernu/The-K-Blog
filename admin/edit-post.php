@@ -28,10 +28,21 @@ if (isset($_SESSION["logged_in"])) {
             $content = nl2br($_POST['content']);
             $img_to_db = "/";
             $current_post_id = $_POST['current_post_id'];
-            // IMAGE UPDATE FUNCTIONALITY //
+            
+            // Set img to be stored in uploads folder
+            $targetDir = "uploads/";
+            $file_name = $_FILES['image']['name'];
+            $targetFilePath = $targetDir . $file_name;
+            $file_type = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+            $thumbnail = $_FILES["image"]["tmp_name"];
+            $img_to_db = file_get_contents($thumbnail);
 
-
-            // END IMAGE UPDATE FUNCTIONALITY //
+            //upload file to server
+            if (move_uploaded_file($thumbnail, $targetFilePath)) {
+                $statusMsg = "The file ".$file_name. " has been uploaded to ".$targetFilePath;
+            } else {
+                $statusMsg = "Sorry, there was an error uploading your file.";
+            }
             
             // Prepare and Run query
             try {
@@ -97,13 +108,16 @@ if (isset($_SESSION["logged_in"])) {
                             <p><?php echo $statusMsg ?></p>
                         </div>
                     <?php } ?>
-                    <?php if (isset($post_data['post_thumbnail'])) { ?>
-                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post_data['post_thumbnail']); ?>" class="edit-single-post-img mv-20" />
+                    <?php if (isset($post_data['post_thumbnail']) && $post_data['post_thumbnail'] != '') { ?>
+                        <div class="thumbnail-img relative mv-20">
+                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post_data['post_thumbnail']); ?>" class="edit-single-post-img" />
+                            <img src="../assets/img/recycle-bin.png" class="delete-img-icon absolute" alt="delete image icon">
+                        </div>
+                        <input type="file" class="upload-thumbnail mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
                     <?php } else { ?>
-                        <label for="image" class="btn mv-10">Thumbnail Image</label>
                         <!-- MAX_FILE_SIZE must precede the file input field -->
                         <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" style="display:none;" id="image" name="image" />
+                        <input type="file" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
                     <?php } ?>
                     <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"><?php echo strip_tags($post_data['post_content']); ?></textarea>
                     <input type="submit" name="update_post" value="UPDATE" class="btn green-btn mv-20"/>

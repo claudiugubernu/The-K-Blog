@@ -9,6 +9,29 @@
 
 // extracted by mini-css-extract-plugin
 
+/***/ }),
+
+/***/ "./scripts/admin/admin.js":
+/*!********************************!*\
+  !*** ./scripts/admin/admin.js ***!
+  \********************************/
+/***/ (() => {
+
+console.log('admin ready');
+
+// Delete Thumbnail Post Image
+if (document.querySelector('.edit-single-post-img')) {
+    imgWrapper = document.querySelector('.thumbnail-img');
+    img = document.querySelector('.edit-single-post-img');
+    uploadImg = document.querySelector('.upload-thumbnail');
+
+    document.querySelector('.delete-img-icon').addEventListener('click', () => {
+        imgWrapper.style.display = 'none';
+        img.src = ' ';
+        uploadImg.classList.add('active');
+    });
+}
+
 /***/ })
 
 /******/ 	});
@@ -89,9 +112,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/app.scss */ "./styles/app.scss");
 /* harmony import */ var _styles_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_app_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _admin_admin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/admin.js */ "./scripts/admin/admin.js");
+/* harmony import */ var _admin_admin_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_admin_admin_js__WEBPACK_IMPORTED_MODULE_1__);
+
+// ADMIN JS //
 
 
 console.log('ready');
+
 })();
 
 /******/ })()
