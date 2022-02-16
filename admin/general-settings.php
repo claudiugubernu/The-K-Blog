@@ -22,6 +22,7 @@ if (isset($_SESSION["logged_in"])) {
             Banner img settings <br>
             Site title settings<br>
             Theme change selector ?<br>
+            site favicon ?<br>
             <input type="submit" name="submit" value="UPDATE" class="btn green-btn mv-20"/>
         </form>
     </div>

@@ -8,6 +8,7 @@ include_once('functions.php');
 
 $db_posts = new Posts;
 $posts = $db_posts->fetch_all();
+
 ?>
 
 <?php include('header.php'); ?>

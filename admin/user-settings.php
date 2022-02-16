@@ -6,6 +6,13 @@ include_once('../includes/connection.php');
 
 if (isset($_SESSION["logged_in"])) { 
     $username = $_SESSION['username'];
+
+    $query = $pdo->prepare('SELECT * FROM users WHERE user_name = ?');
+    $query->bindValue(1, $username);
+    $query->execute();
+
+    $user_data = $query->fetchAll();
+
 } else {
     header('Location: index.php');
 }
@@ -21,15 +28,21 @@ if (isset($_SESSION["logged_in"])) {
         <form method="post" class="user-update-form flex flex-column justify-center">
             <div class="form-row flex flex-column">
                 <label for="username" class="mb-10 fs-16 c-light-grey">Username</label>
-                <input type="text" name="username" class="mb-10 p-10 bg-senary c-light-grey tt-capitalize" value="<?php echo $_SESSION['username'] ?>" readonly/>
+                <input type="text" name="username" class="mb-10 p-10 bg-senary c-light-grey tt-capitalize" value="<?php echo $user_data[0]['user_name'] ?>" readonly disabled/>
             </div>
             <div class="form-row flex flex-column">
                 <label for="email" class="mb-10 fs-16 c-light-grey">Email</label>
-                <input type="email" name="email" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $_SESSION['email'] ?>" readonly/>
+                <input type="email" name="email" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $user_data[0]['user_email'] ?>" readonly disabled/>
+            </div>
+            <div class="mv-20">
+                <label class="fs-24 c-light-grey">Reset Secret Word</label>
             </div>
             <div class="form-row flex flex-column">
                 <label for="secret_word" class="mb-10 fs-16 c-light-grey">Secret Word</label>
-                <input type="text" name="secret_word" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $_SESSION['secret_word'] ?>" />
+                <input type="text" name="secret_word" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $user_data[0]['user_secret_word'] ?>" />
+            </div>
+            <div class="mv-20">
+                <label class="fs-24 c-light-grey">Reset Password</label>
             </div>
             <div class="form-row flex flex-column">
                 <label for="current_password" class="mb-10 fs-16 c-light-grey">Current Password</label>
