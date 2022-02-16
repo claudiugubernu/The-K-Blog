@@ -29,7 +29,7 @@ if (isset($_SESSION["logged_in"])) {
             }
         }
     }
-    ?>
+?>
 
 <?php include('header.php'); ?>
 
@@ -47,11 +47,11 @@ if (isset($_SESSION["logged_in"])) {
     <form action="index.php" method="post" class="mt-10 mb-30 flex flex-column"> 
         <input type="text" class="mb-10 p-10" name="username" placeholder="Username">
         <input type="password" class="mb-10 p-10" name="password" placeholder="Password">
-        <input type="submit" class="mb-10 blue-btn" value="Login">
+        <input type="submit" class="mb-10 green-btn align-self-center" value="Login">
     </form>
     <div class="flex align-items-center gap-10">
-        <p class="fs-14 c-light-grey">No account?</p>
-        <a href="../index.php" class="c-light-blue">Go Back</a>
+        <p class="fs-14 c-light-grey">Forgot Password ?</p>
+        <a href="forgot-password.php" class="c-light-blue">Reset Password</a>
     </div>
 </div>
 <?php include('footer.php'); ?> 

@@ -24,7 +24,7 @@ if (isset($_SESSION["logged_in"])) {
         <div class="admin-gallery grid">
         <?php foreach ($images as $image) { ?> 
             <?php if ($image) { ?>
-                <div class="admin-gallery-img">
+                <div class="admin-gallery-img relative">
                     <img src="<?php echo $image ?>" class="single-post-img" />
                 </div>    
             <?php } ?>
