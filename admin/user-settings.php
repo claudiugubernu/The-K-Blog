@@ -37,9 +37,11 @@ if (isset($_SESSION["logged_in"])) {
             <div class="mv-20">
                 <label class="fs-24 c-light-grey">Reset Secret Word</label>
             </div>
-            <div class="form-row flex flex-column">
+            <div class="form-row flex flex-column relative">
                 <label for="secret_word" class="mb-10 fs-16 c-light-grey">Secret Word</label>
-                <input type="text" name="secret_word" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $user_data[0]['user_secret_word'] ?>" />
+                <input type="text" id="secret-word" name="secret_word" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $user_data[0]['user_secret_word'] ?>" />
+                <div class="secret-word-blur absolute bg-senary p-10"></div>
+                <p class="secret-word-btn fs-16 absolute c-light-grey">REMIND ME</p>
             </div>
             <div class="mv-20">
                 <label class="fs-24 c-light-grey">Reset Password</label>
