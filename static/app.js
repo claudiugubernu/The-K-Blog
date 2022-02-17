@@ -32,6 +32,31 @@ if (document.querySelector('.edit-single-post-img')) {
     });
 }
 
+// Check passwords input match
+const checkPasswords = () => {
+    let newPassword;
+    let repeatNewPassword;
+
+    if(document.querySelector('#new-password')) {
+        document.querySelector('#new-password').addEventListener('keyup', () => {
+            newPassword = document.querySelector('#new-password').value;
+        });
+    }
+    if(document.querySelector('#repeat-new-password')) {
+        document.querySelector('#repeat-new-password').addEventListener('keyup', () => {
+            repeatNewPassword = document.querySelector('#repeat-new-password').value;
+            if(newPassword === repeatNewPassword) {
+                document.querySelector('#repeat-new-password').style.backgroundColor = '#96CED1';
+            } else {
+                document.querySelector('#repeat-new-password').style.backgroundColor = '#F58FA1';
+            }
+        });
+    }
+}
+
+checkPasswords();
+   
+
 /***/ })
 
 /******/ 	});

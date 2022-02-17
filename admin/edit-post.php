@@ -45,24 +45,20 @@ if (isset($_SESSION["logged_in"])) {
             }
             
             // Prepare and Run query
-            try {
-                $query = $pdo->prepare('UPDATE posts SET post_title=?, post_content=?, post_timestamp=?, post_thumbnail=? WHERE post_id=?');
-                $query->bindValue(1, $title);
-                $query->bindValue(2, $content);
-                $query->bindValue(3, time());
-                $query->bindValue(4, $img_to_db);
-                $query->bindValue(5, $current_post_id);
+            $query = $pdo->prepare('UPDATE posts SET post_title=?, post_content=?, post_timestamp=?, post_thumbnail=? WHERE post_id=?');
+            $query->bindValue(1, $title);
+            $query->bindValue(2, $content);
+            $query->bindValue(3, time());
+            $query->bindValue(4, $img_to_db);
+            $query->bindValue(5, $current_post_id);
 
-                $query_execute = $query->execute();
+            $query_execute = $query->execute();
 
-                if($query_execute = $query->execute()) {
-                    $success_message =  'Post Successfully updated!';
-                    header('Location: edit-post.php?post_id=' . $curent_post_id);
-                } else {
-                    $error_message =  'Unknown error. Please try again.';
-                }
-            } catch(PDOException $e) {
-                echo $e->getMessage();
+            if($query_execute = $query->execute()) {
+                $success_message =  'Post Successfully updated!';
+                header('Location: edit-post.php?post_id=' . $curent_post_id);
+            } else {
+                $error_message =  'Unknown error. Please try again.';
             }
         } else {
             // Ask for title to be added

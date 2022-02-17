@@ -4,13 +4,15 @@ session_start();
 
 include_once('../includes/connection.php');
 
-if (isset($_POST['email'])) {
+if (isset($_POST['submit'])) {
     // Check for email input
     if (empty($_POST['email'])) {
         $error = 'Email Required';
     } else {
         // Get the input email and look for it in the DB
         $email = $_POST['email'];
+
+        // Prepare and run query to DB
         $query = $pdo->prepare('SELECT user_secret_word FROM users WHERE user_email = ?');
         $query->bindValue(1, $email);
         $query->execute();
@@ -60,7 +62,7 @@ if (isset($_POST['email'])) {
     <?php } else { ?>
         <form action="reset-secret-word.php" method="post" class="mt-10 mb-30 flex flex-column"> 
             <input type="email" class="mb-10 p-10" name="email" placeholder="Email">
-            <input type="submit" class="mb-10 green-btn align-self-center" value="Remind Me">
+            <input type="submit" name="submit" class="mb-10 green-btn align-self-center" value="Remind Me">
         </form>
         <div class="flex align-items-center gap-10">
             <p class="fs-14 c-light-grey">Enter your email address to find out your Secret Word</p>
