@@ -41,8 +41,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-
-
 ?>
 
 <?php include('header.php'); ?>

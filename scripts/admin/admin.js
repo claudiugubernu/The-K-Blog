@@ -34,6 +34,25 @@ const checkPasswords = () => {
         });
     }
 }
-
 checkPasswords();
-   
+
+// Hide/Show Secret Word in User Settings
+const showSecretWord = () => {
+    if (document.querySelector('.secret-word-btn')) {
+        document.querySelector('.secret-word-btn').addEventListener('click', () => {
+            document.querySelector('.secret-word-blur').classList.add('active');
+            document.querySelector('.secret-word-btn').classList.add('active');
+            coverSecretWord();
+        });
+    }
+}
+
+const coverSecretWord = () => {
+    setTimeout(
+    function() {
+        document.querySelector('.secret-word-blur').classList.remove('active');
+        document.querySelector('.secret-word-btn').classList.remove('active');
+    },  8.0*1000);
+}
+
+showSecretWord();
