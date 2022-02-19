@@ -20,8 +20,8 @@ $posts = $db_posts->fetch_all();
                 foreach ($posts as $post) {?>
                     <div class="post-card inherit-link" id="<?php echo $post['post_id'] ?>">
                         <div class="post-card-img">
-                        <?php if($post['post_thumbnail']) { ?>
-                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($post['post_thumbnail']); ?>" />
+                        <?php if($post['post_thumbnail_path']) { ?>
+                            <img src="./admin/<?php echo $post['post_thumbnail_path']; ?>" class="single-post-img" />
                         <?php } ?>
                         </div>
                         <div class="post-card-title">
