@@ -17,8 +17,8 @@ if (isset($_GET['id'])) {
 
 <div id="content" class="single-post-wrapper mb-50">
     <div class="post-banner relative">
-        <?php if($posts_data['post_thumbnail']) { ?>
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($posts_data['post_thumbnail']); ?>" class="single-post-img" />
+        <?php if($posts_data['post_thumbnail_path']) { ?>
+            <img src="./admin/<?php echo $posts_data['post_thumbnail_path']; ?>" class="single-post-img" />
         <?php } ?>
         <div class="post-info">
             <h1 class="post-title fs-50"><?php echo $posts_data['post_title']?></h1>

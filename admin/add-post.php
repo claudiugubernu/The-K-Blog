@@ -15,14 +15,13 @@ if (isset($_SESSION["logged_in"])) {
         // Set img to be stored in uploads folder
         $targetDir = "uploads/";
         $file_name = $_FILES['image']['name'];
-        $targetFilePath = $targetDir . $file_name;
-        $file_type = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+        $target_file_path = $targetDir . $file_name;
+        $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
         $thumbnail = $_FILES["image"]["tmp_name"];
-        $img_to_db = file_get_contents($thumbnail);
 
         //upload file to server
-        if (move_uploaded_file($thumbnail, $targetFilePath)) {
-            $statusMsg = "The file ".$file_name. " has been uploaded to ".$targetFilePath;
+        if (move_uploaded_file($thumbnail, $target_file_path)) {
+            $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;
         } else {
             $statusMsg = "Sorry, there was an error uploading your file.";
         }
@@ -31,13 +30,19 @@ if (isset($_SESSION["logged_in"])) {
             $error = 'Title field is required';
         } else {
             
-            $query = $pdo->prepare('INSERT INTO posts (post_title, post_content, post_timestamp, post_thumbnail) VALUES (?, ?, ?, ?)');
+            $query = $pdo->prepare('INSERT INTO posts (post_title, post_content, post_timestamp, post_thumbnail_path) VALUES (?, ?, ?, ?)');
             $query->bindValue(1, $title);
             $query->bindValue(2, $content);
             $query->bindValue(3, time());
-            $query->bindValue(4, $img_to_db);
+            $query->bindValue(4, $target_file_path);
             $query->execute();
-            header('Location: posts.php');
+
+            if ($query->execute()) {
+                header('Location: posts.php');
+            } else {
+                $error = 'An error has occured. Please try again.';
+            }
+            
         }
     }
 
