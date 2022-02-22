@@ -23,25 +23,34 @@ if (isset($_SESSION["logged_in"])) {
     if (isset($_POST["update_post"])) {
         // Check if title exists
         if (isset($_POST["title"])) {
-            //Get all data from post
+            // Get all data from post
             $title = $_POST['title'];
             $content = nl2br($_POST['content']);
             $current_post_id = $_POST['current_post_id'];
-            
-            // Set img to be stored in uploads folder
-            $targetDir = "uploads/";
-            $file_name = $_FILES['image']['name'];
-            $target_file_path = $targetDir . $file_name;
-            $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
-            $thumbnail = $_FILES["image"]["tmp_name"];
 
-            //upload file to server
-            if (move_uploaded_file($thumbnail, $target_file_path)) {
-                $statusMsg = "The file ". $file_name . " has been uploaded to ". $target_file_path;
+            // Check for new img
+            if ($_FILES['image']['size'] != 0) {
+                // Set img to be stored in uploads folder
+                $targetDir = "uploads/";
+                $file_name = $_FILES['image']['name'];
+                if ($file_name) {
+                    $target_file_path = $targetDir . $file_name;
+                    $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
+                    $thumbnail = $_FILES["image"]["tmp_name"];
+        
+                    //upload file to server
+                    if (move_uploaded_file($thumbnail, $target_file_path)) {
+                        $statusMsg = "The file ". $file_name . " has been uploaded to ". $target_file_path;
+                    } else {
+                        $statusMsg = "Sorry, there was an error uploading your file.";
+                    }
+                }
+            } else if (empty($_POST['existing_img'])) {
+                $target_file_path = '';
             } else {
-                $statusMsg = "Sorry, there was an error uploading your file.";
+                $target_file_path = $post_data['post_thumbnail_path'];
             }
-            
+           
             // Prepare and Run query
             $query = $pdo->prepare('UPDATE posts SET post_title=?, post_content=?, post_timestamp=?, post_thumbnail_path=? WHERE post_id=?');
             $query->bindValue(1, $title);
@@ -49,10 +58,9 @@ if (isset($_SESSION["logged_in"])) {
             $query->bindValue(3, time());
             $query->bindValue(4, $target_file_path);
             $query->bindValue(5, $current_post_id);
-
             $query_execute = $query->execute();
 
-            if($query_execute = $query->execute()) {
+            if($query_execute) {
                 $success_message =  'Post Successfully updated!';
                 header('Location: edit-post.php?post_id=' . $_GET['post_id']);
             } else {
@@ -106,6 +114,7 @@ if (isset($_SESSION["logged_in"])) {
                         <div class="thumbnail-img relative mv-20">
                             <img src="<?php echo $post_data['post_thumbnail_path']; ?>" class="edit-single-post-img" />
                             <img src="../assets/img/recycle-bin.png" class="delete-img-icon absolute" alt="delete image icon">
+                            <input type="hidden" id="existing-image" name="existing_img" value="<?php echo $post_data['post_thumbnail_path']?>">
                         </div>
                         <input type="file" class="upload-thumbnail mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
                     <?php } else { ?>

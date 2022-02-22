@@ -31,6 +31,7 @@ if (isset($_POST['delete_post'])) {
         
                 if ($query_execute) {
                     $succes_message = 'Record(s) deleted successfully';
+                    header('Location: posts.php');
                 } else {
                     $error_message = 'Unable to delete record(s). Please try again.';
                 }

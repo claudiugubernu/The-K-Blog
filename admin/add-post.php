@@ -11,41 +11,41 @@ if (isset($_SESSION["logged_in"])) {
     if (isset($_POST["title"])) {
         $title = $_POST['title'];
         $content = nl2br($_POST['content']);
+        $img = $_FILES['image']['name'];
 
-        // Set img to be stored in uploads folder
-        $targetDir = "uploads/";
-        $file_name = $_FILES['image']['name'];
-        $target_file_path = $targetDir . $file_name;
-        $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
-        $thumbnail = $_FILES["image"]["tmp_name"];
+        if($img) {
+            // Set img to be stored in uploads folder
+            $targetDir = "uploads/";
+            $file_name = $_FILES['image']['name'];
+            $target_file_path = $targetDir . $file_name;
+            $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
+            $thumbnail = $_FILES["image"]["tmp_name"];
 
-        //upload file to server
-        if (move_uploaded_file($thumbnail, $target_file_path)) {
-            $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;
-        } else {
-            $statusMsg = "Sorry, there was an error uploading your file.";
+            //upload file to server
+            if (move_uploaded_file($thumbnail, $target_file_path)) {
+                $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;
+            } else {
+                $statusMsg = "Sorry, there was an error uploading your file.";
+            }
         }
 
         if (empty($title)) {
             $error = 'Title field is required';
         } else {
-            
             $query = $pdo->prepare('INSERT INTO posts (post_title, post_content, post_timestamp, post_thumbnail_path) VALUES (?, ?, ?, ?)');
             $query->bindValue(1, $title);
             $query->bindValue(2, $content);
             $query->bindValue(3, time());
-            $query->bindValue(4, $target_file_path);
-            $query->execute();
+            $query->bindValue(4, $target_file_path ? $target_file_path : '');
+            $query_execute = $query->execute();
 
-            if ($query->execute()) {
+            if ($query_execute) {
                 header('Location: posts.php');
             } else {
                 $error = 'An error has occured. Please try again.';
-            }
-            
+            } 
         }
     }
-
 } else {
     header('Location: index.php');
 }
@@ -75,7 +75,7 @@ if (isset($_SESSION["logged_in"])) {
                 <?php } ?>
                 <!-- MAX_FILE_SIZE must precede the file input field -->
                 <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
-                <input type="file" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
+                <input type="file" name="image" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image"/>
                 <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"></textarea>
                 <input type="submit" name="submit" value="PUBLISH" class="btn green-btn mv-20"/>
             </form>
