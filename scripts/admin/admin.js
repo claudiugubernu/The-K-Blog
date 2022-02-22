@@ -8,7 +8,8 @@ if (document.querySelector('.edit-single-post-img')) {
 
     document.querySelector('.delete-img-icon').addEventListener('click', () => {
         imgWrapper.style.display = 'none';
-        img.src = ' ';
+        img.src = '';
+        document.querySelector('#existing-image').value = '';
         uploadImg.classList.add('active');
     });
 }
