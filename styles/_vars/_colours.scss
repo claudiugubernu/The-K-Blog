@@ -22,6 +22,21 @@
   --color-edit: #D9C16D;
 }
 
+.default {
+  --color-tertiary: #99A6C0;
+  --color-senary: #4D6D9A;
+}
+
+.corporate {
+  --color-tertiary: #cacaca;
+  --color-senary: #303641;
+}
+
+.dark-mode {
+  --color-tertiary: #f1f2f4;
+  --color-senary: #0c151d;
+}
+
 .c-white {
   color: var(--color-white);
 }

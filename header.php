@@ -17,6 +17,7 @@ $cms_settings = $query->fetchAll();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $cms_settings[0]['site_title']; ?></title>
+        <link rel="shortcut icon" type="image/jpg" href="<?php echo $cms_settings[0]['site_icon'] ?>"/>
         <link rel="stylesheet" href="static/app.css" />
     </head>
         <body>
