@@ -11,7 +11,7 @@ Built in with a secure login system will keep your blogs safe from unwanted snoo
 Forgot your password ? Don't stress it out ! 
 The CMS comes with a reset password system easy to use as well. All you need to do is to have your Secret Word at hand and voila. 
 
-Password Successfully reseted! 
+Password Successfully reset! 
 
 And if you forgot your Secret Word, we can always remind you as there is a built it reminder system too.
 
