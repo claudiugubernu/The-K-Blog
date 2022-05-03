@@ -14,33 +14,36 @@ if (isset($_SESSION["logged_in"])) {
     // Get all CMS settings and assign them
     $cms_settings = $query->fetchAll();
 
-    var_dump($cms_settings);
-
     // Update CMS settings in DB
     if (isset($_POST['site_info'])) {
         // Check for site title
         if (!empty($_POST['site_title'])) {
             $site_title = $_POST['site_title'];
             $img = $_FILES['image']['name'];
-
             if ($img) {
                 // Set img to be stored in uploads folder
                 $targetDir = "uploads/";
                 $file_name = $_FILES['image']['name'];
+                $file_size = $_FILES['image']['size'];
                 $target_file_path = $targetDir . $file_name;
                 $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
-                $thumbnail = $_FILES["image"]["tmp_name"];
+                $thumbnail = $_FILES['image']['tmp_name'];
 
-                //upload file to server
-                if (move_uploaded_file($thumbnail, $target_file_path)) {
-                    $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;
+                if ($file_size <= 3000000) {
+                    //upload file to server
+                    if (move_uploaded_file($thumbnail, $target_file_path)) {
+                        var_dump($target_file_path);
+                        $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;
+                    } else {
+                        $statusMsg = "Sorry, there was an error uploading your file.";
+                    }
                 } else {
-                    $statusMsg = "Sorry, there was an error uploading your file.";
-                }
+                    $statusMsg = "Sorry, the max allowed size is 3Mb.";
+                }   
             }
 
             // Prepare query to get settings from DB
-            $query = $pdo->prepare('UPDATE cms_settings SET post_thumbnail_path=?, site_title=?');
+            $query = $pdo->prepare('UPDATE cms_settings SET site_icon=?, site_title=?');
             $query->bindValue(1, $target_file_path ? $target_file_path : '');
             $query->bindValue(2, $site_title);
 
@@ -50,7 +53,7 @@ if (isset($_SESSION["logged_in"])) {
                 header('Location: general-settings.php');
             } else {
                 $error_message =  'Unknown error. Please try again.';
-            }
+            }   
         }
     }
 } else {
@@ -65,7 +68,7 @@ if (isset($_SESSION["logged_in"])) {
     <?php include('templates/admin-nav.php'); ?>
     <div class="admin-dashboard-wrapper p-30 flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
-        <form method="post" class="cms-update-form flex flex-column justify-center">
+        <form method="post" enctype="multipart/form-data" class="cms-update-form flex flex-column justify-center">
             <div class="form-row flex flex-column">
                 <label for="image" class="tooltip mb-10 fs-16 c-light-grey">Site Icon <span class="info"> &#9432;</span><span class="tooltiptext">Site Icons should be square and at least 512 × 512 pixels.</span></label>
                 <input type="file" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image"/>
