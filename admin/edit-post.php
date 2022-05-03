@@ -22,7 +22,7 @@ if (isset($_SESSION["logged_in"])) {
     // Update post
     if (isset($_POST["update_post"])) {
         // Check if title exists
-        if (isset($_POST["title"])) {
+        if (!empty($_POST["title"])) {
             // Get all data from post
             $title = $_POST['title'];
             $content = nl2br($_POST['content']);

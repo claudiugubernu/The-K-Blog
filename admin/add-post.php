@@ -13,7 +13,7 @@ if (isset($_SESSION["logged_in"])) {
         $content = nl2br($_POST['content']);
         $img = $_FILES['image']['name'];
 
-        if($img) {
+        if ($img) {
             // Set img to be stored in uploads folder
             $targetDir = "uploads/";
             $file_name = $_FILES['image']['name'];
