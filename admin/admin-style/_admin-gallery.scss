@@ -1,0 +1,30 @@
+.admin-gallery-wrapper {
+    .admin-gallery {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        align-self: flex-start;
+        margin: auto;
+
+        @include md-up() {
+            grid-template-columns: repeat(2, 1fr);  
+        }
+
+        @include lg-up() {
+            grid-template-columns: repeat(3, 1fr);   
+        }
+        
+        .admin-gallery-img {
+            height: 300px;
+            display: block;
+            overflow: hidden;
+            background-color: var(--color-senary);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                padding: 10px;
+            }
+        }
+    }
+}

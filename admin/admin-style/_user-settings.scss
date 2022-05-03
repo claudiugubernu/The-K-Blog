@@ -1,0 +1,43 @@
+.users-wrapper  {
+    .user-update-form {
+        max-width: 500px;
+
+        .form-row {
+            &:hover {
+                .secret-word-btn {
+                    display: block;
+
+                    &.active {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .secret-word-blur {
+            left: -5px;
+            right: -5px;
+            top: 20px;
+            bottom: 0;
+            filter: blur(4px);
+            
+            &.active {
+                display: none;
+            }
+        }
+
+        .secret-word-btn {
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            cursor: pointer;
+            z-index: 10;
+            display: none;
+
+            &.active {
+                display: none;
+            }
+        }
+    }
+}

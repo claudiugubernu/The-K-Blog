@@ -1,0 +1,39 @@
+.admin-wrapper {
+    height: auto;
+    min-height: 100%;
+    //overflow: scroll;
+    position: relative;
+
+    .admin-dashboard-wrapper {
+        margin-left: 250px;
+        height: 100%;
+        width: 100%;
+
+        .admin-dashboard-bottom {
+            height: 100%;
+        }
+
+        .admin-left-card,
+        .admin-right-card,
+        .dashboard-wrapper-bottom {
+            background-color: var(--color-senary);
+            color: var(--color-light-grey);
+        }
+
+        form {
+            height: 100%;
+
+            select {
+                border: none;
+                padding: 10px;
+                background-color: var(--color-tertiary);
+                color: var(--color-light-grey);
+                width: 100%;
+            }
+        }
+
+        .dashboard-wrapper-bottom  {
+            min-height: 300px;
+        }
+    }
+}

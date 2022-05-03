@@ -1,0 +1,14 @@
+// Handle States (Such as hover)
+
+:root {
+      /* ------ */
+  --opacity-inactive: 0.3;
+}
+
+.no-scroll {
+  overflow: hidden !important; 
+}
+
+.blur {
+  backdrop-filter: blur(4px);
+}

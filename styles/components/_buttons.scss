@@ -1,0 +1,93 @@
+.btn {
+    background-color: var(--color-senary);
+    padding: 20px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 250px;
+    text-align: center;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.yellow-link {
+    color: var(--color-edit);
+}
+
+.blue-btn {
+    background-color: var(--color-tertiary);
+    padding: 10px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.green-btn {
+    background-color: var(--color-add);
+    padding: 10px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.red-btn {
+    background-color: var(--color-delete);
+    padding: 10px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.yellow-btn {
+    background-color: var(--color-edit);
+    padding: 10px 30px;
+    color: var(--color-light-grey);
+    opacity: 1;
+    transition: all 300ms ease-in;
+    display: block;
+    max-width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    @extend .fs-16;
+    &:hover {
+        opacity: 0.8;
+    }
+}
