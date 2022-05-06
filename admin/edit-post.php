@@ -78,15 +78,15 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="admin-wrapper edit-post flex bg-tertiary">
+<div class="admin-wrapper edit-post flex admin-bg-primary">
 
     <?php include('templates/admin-nav.php'); ?>
 
-    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+    <div class="admin-dashboard-wrapper flex flex-column">
 
         <?php include('templates/admin-logout.php'); ?> 
 
-        <div class="admin-posts-bottom mv-auto c-light-grey">
+        <div class="admin-posts-bottom mh-50 admin-c-secondary">
             <?php if(isset($success_message)) { ?>
                 <p class="fs-16 c-add"><?php echo $success_message ?></p>
             <?php } ?> 
@@ -104,7 +104,7 @@ if (isset($_SESSION["logged_in"])) {
                 <?php } ?>
                 <form method="post" enctype="multipart/form-data" class="flex flex-column ff-1">
                     <input type="hidden" name="current_post_id" value="<?php echo $post_data['post_id'] ?>"/>
-                    <input type="text" name="title" class="mb-10 p-10 bg-senary c-light-grey" value="<?php echo $post_data['post_title'] ?>"/>
+                    <input type="text" name="title" class="mb-10 p-10 admin-bg-secondary admin-c-primary" value="<?php echo $post_data['post_title'] ?>"/>
                     <?php if (isset($statusMsg)) { ?>
                         <div class="c-green mv-10">
                             <p><?php echo $statusMsg ?></p>
@@ -122,7 +122,7 @@ if (isset($_SESSION["logged_in"])) {
                         <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
                         <input type="file" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image" name="image" />
                     <?php } ?>
-                    <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"><?php echo strip_tags($post_data['post_content']); ?></textarea>
+                    <textarea rows="25" name="content" class="admin-bg-secondary admin-c-primary p-10 ff-1"><?php echo strip_tags($post_data['post_content']); ?></textarea>
                     <input type="submit" name="update_post" value="UPDATE" class="btn green-btn mv-20"/>
                 </form>
             <?php } else {

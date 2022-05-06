@@ -3,7 +3,7 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
         align-self: flex-start;
-        margin: auto;
+        margin: 0 50px;
 
         @include md-up() {
             grid-template-columns: repeat(2, 1fr);  
@@ -17,7 +17,7 @@
             height: 300px;
             display: block;
             overflow: hidden;
-            background-color: var(--color-senary);
+            background-color: var(--admin-color-secondary);
 
             img {
                 height: 100%;

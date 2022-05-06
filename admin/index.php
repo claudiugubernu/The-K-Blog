@@ -35,7 +35,7 @@ if (isset($_SESSION["logged_in"])) {
 
 <div id="content" class="sign-in-wrapper site-width flex flex-column justify-center align-items-center m-auto">
     <a href="index.php">
-        <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
+        <img src="../assets/img/Logo1 Admin.png" alt="Site logo"/>
     </a>
 
     <?php if (isset($error)) { ?>
@@ -51,7 +51,7 @@ if (isset($_SESSION["logged_in"])) {
     </form>
     <div class="flex align-items-center gap-10">
         <p class="fs-14 c-light-grey">Forgot Password ?</p>
-        <a href="forgot-password.php" class="c-light-blue">Reset Password</a>
+        <a href="forgot-password.php" class="c-light-red">Reset Password</a>
     </div>
 </div>
 <?php include('footer.php'); ?> 

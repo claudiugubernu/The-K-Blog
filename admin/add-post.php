@@ -53,21 +53,21 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="admin-wrapper flex bg-tertiary">
+<div class="admin-wrapper flex admin-bg-primary">
 
     <?php include('templates/admin-nav.php'); ?>
 
-    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+    <div class="admin-dashboard-wrapper flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
-        <div class="admin-posts-bottom mv-auto c-light-grey">
-            <p class="add-post-title-label mb-10 fs-24">Title</p>
+        <div class="admin-posts-bottom mh-50">
+            <p class="add-post-title-label mb-10 fs-24 admin-c-secondary">Title</p>
             <?php if (isset($error)) { ?>
                 <div class="error mv-10">
                     <p><?php echo $error ?></p>
                 </div>
             <?php } ?>
             <form action="add-post.php" method="post" enctype="multipart/form-data" class="flex flex-column ff-1">
-                <input type="text" name="title" class="mb-10 p-10 bg-senary c-light-grey"/>
+                <input type="text" name="title" class="mb-10 p-10 admin-bg-secondary admin-c-primary"/>
                 <?php if (isset($statusMsg)) { ?>
                     <div class="c-green mv-10">
                         <p><?php echo $statusMsg ?></p>
@@ -76,7 +76,7 @@ if (isset($_SESSION["logged_in"])) {
                 <!-- MAX_FILE_SIZE must precede the file input field -->
                 <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
                 <input type="file" name="image" class="mv-20" accept="image/png, image/jpeg, image/jpg" id="image"/>
-                <textarea rows="25" name="content" class="bg-senary c-light-grey p-10 ff-1"></textarea>
+                <textarea rows="25" name="content" class="admin-bg-secondary admin-c-primary p-10 ff-1"></textarea>
                 <input type="submit" name="submit" value="PUBLISH" class="btn green-btn mv-20"/>
             </form>
         </div>
