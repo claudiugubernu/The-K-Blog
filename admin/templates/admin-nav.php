@@ -26,4 +26,7 @@
             </li>
         </ul>
     </div>
+    <div class="copyright mb-10 admin-c-primary">
+        <p class="fs-10">&copy; <?php echo date("Y");?> Claudiu Gubernu</p>
+    </div>
 </div>
