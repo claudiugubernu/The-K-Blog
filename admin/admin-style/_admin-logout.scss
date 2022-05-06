@@ -6,10 +6,16 @@
     .admin-sign-out {
         text-transform: capitalize;
         font-size: 12px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     
     .admin-sign-out-link {
         font-size: 10px;
         margin-left: 5px;
+        &:hover {
+            color: var(--color-light-red);
+        }
     }
 }
