@@ -1,10 +1,6 @@
 <div class="admin-nav admin-bg-secondary flex flex-column ph-30 m-ph-15">
-    <div class="admin-nav-wrapper-top flex justify-between align-items-center gap-30">
+    <div class="admin-nav-wrapper-top flex justify-center align-items-center gap-30">
         <img src="../assets/img/Logo1 Admin.png" class="admin-logo" alt="Admin Logo" /> 
-        <div class="flex align-items-end gap-10">
-            <img src="../../static/icons/home.svg" class="icon-20 home-icon" alt="Home icon">
-            <a href="../index.php" class="admin-open-site" target="_blank">Website</a>
-        </div> 
     </div>
     <div class="admin-nav-wrapper-bottom flex-1">
         <ul class="admin-nav-items flex flex-column justify-center fs-24">
