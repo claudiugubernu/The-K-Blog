@@ -2,13 +2,6 @@
 
     form {
         max-width: 500px;
-
-        #theme-id {
-            border: none;
-            padding: 10px;
-            background-color: var(--color-senary);
-            color: var(--color-light-grey);
-        }
     }
 
     .info {
@@ -34,7 +27,8 @@
             top: -20px;
             max-width: 200px;
             left: 70px;
-            background-color: var(--color-senary);
+            background-color: var(--admin-color-secondary);
+            color: var(--admin-text-color-primary);
             font-size: 10px;
         }
 
