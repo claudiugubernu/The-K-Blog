@@ -3,7 +3,7 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
         align-self: flex-start;
-        margin: 0 50px;
+        padding: 0 50px 50px 50px;
 
         @include md-up() {
             grid-template-columns: repeat(2, 1fr);  
