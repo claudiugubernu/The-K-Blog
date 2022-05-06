@@ -17,9 +17,9 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="posts-wrapper admin-wrapper admin-gallery-wrapper flex align-items-center bg-tertiary">
+<div class="posts-wrapper admin-wrapper admin-gallery-wrapper flex align-items-center admin-bg-primary">
     <?php include('templates/admin-nav.php'); ?>
-    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+    <div class="admin-dashboard-wrapper flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
         <div class="admin-gallery grid">
         <?php foreach ($images as $image) { ?> 

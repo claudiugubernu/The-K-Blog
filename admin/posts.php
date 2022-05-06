@@ -48,13 +48,13 @@ if (isset($_POST['delete_post'])) {
 
 <?php include('header.php'); ?>
 
-<div class="posts-wrapper admin-wrapper flex md-flex-column align-items-center bg-tertiary">
+<div class="posts-wrapper admin-wrapper flex md-flex-column align-items-center admin-bg-primary">
     <?php include('templates/admin-nav.php'); ?>
-    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+    <div class="admin-dashboard-wrapper flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
         <?php if (!empty($posts)) { ?>
-            <form action="posts.php" method="post">
-                <div class="admin-posts-btn flex gap-30 mv-50">
+            <form action="posts.php" method="post" class="mh-50">
+                <div class="admin-posts-btn flex gap-30 mb-50">
                     <a href="add-post.php" class="btn green-btn">ADD POST</a>
                     <input class="btn red-btn" type="submit" name="delete_post" value="DELETE POST">
                 </div>
@@ -71,21 +71,21 @@ if (isset($_POST['delete_post'])) {
                     <div class="dashboard-posts-wrapper">
                         <?php if (!empty($posts)) { ?>
                             <div class="post-list-grid">
-                                <div class="grid-head grid mb-20 ph-10 c-light-grey">
+                                <div class="grid-head grid mb-20 ph-10 admin-c-tertiary">
                                     <p>ID</p>          
                                     <p>Title</p>          
                                     <p>Date</p>
                                 </div>
                         <?php } ?>
                             <?php if (empty($posts)) {?>
-                                <div class="flex gap-10 align-items-end c-light-grey">
+                                <div class="flex gap-10 align-items-end admin-c-tertiary">
                                     <p>So empty.</p>
                                     <a href="add-post.php" class="btn green-btn">ADD POST</a>
                                     <p>your first post.</p>
                                 </div>
                             <?php } ?>
                             <?php foreach ($posts as $post) { ?>
-                                <div class="post-row grid-body grid c-light-grey pv-10 ph-10 <?php if ( $i % 2 !=0 ) { echo "bg-senary"; } ?> ">
+                                <div class="post-row grid-body grid admin-c-tertiary pv-10 ph-10 <?php if ( $i % 2 !=0 ) { echo "admin-bg-secondary c-light-grey"; } ?> ">
                                     <div class="grid-body-id flex align-items-center gap-10">
                                         <input type="checkbox" name="selected-post_id[]" value="<?php echo $post['post_id'] ?>">
                                         <p><?php echo $post['post_id'] ?></p>  

@@ -26,19 +26,19 @@ if (isset($_SESSION["logged_in"])) {
 
 <?php include('header.php'); ?>
 
-<div class="admin-wrapper flex md-flex-column align-items-center bg-tertiary">
+<div class="admin-wrapper flex md-flex-column align-items-center admin-bg-primary">
 
     <?php include('admin-nav.php'); ?>
 
-    <div class="admin-dashboard-wrapper p-30 flex flex-column">
+    <div class="admin-dashboard-wrapper flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
-        <div class="admin-dashboard-bottom flex flex-column justify-center">
+        <div class="admin-dashboard-bottom flex flex-column justify-center mh-50">
             <div class="dashboard-wrapper-top flex gap-30 mb-50">
-                <div class="admin-left-card w-25 m-w-100 p-50 flex flex-column">
+                <div class="admin-left-card admin-bg-secondary w-25 m-w-100 p-50 flex flex-column">
                     <p class="admin-left-card-title mb-10">Number of Posts</p>
                     <p class="admin-left-card-content fs-100 align-self-center"><?php echo $total_posts ?></p>
                 </div>
-                <div class="admin-right-card w-25 m-w-100 p-50 flex flex-column align-items-center">
+                <div class="admin-right-card admin-bg-secondary w-25 m-w-100 p-50 flex flex-column align-items-center">
                     <form action="index.php" method="post" class="flex flex-column justify-between">
                         <label class="admin-right-card-title mb-10">Quick Delete</label>
                         <select name="post-id">
@@ -51,7 +51,7 @@ if (isset($_SESSION["logged_in"])) {
                     </form>
                 </div>
             </div>
-            <div class="dashboard-wrapper-bottom w-100 p-50 flex flex-column justify-start">
+            <div class="dashboard-wrapper-bottom admin-bg-secondary w-100 p-50 flex flex-column justify-start">
                 <p class="quick-link-title mb-20">Quick Links</p>
                 <div class="quick-link-btns flex">
                     <a href="add-post.php" class="btn green-btn">ADD POST</a>

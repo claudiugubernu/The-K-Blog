@@ -55,23 +55,14 @@ const coverSecretWord = () => {
         document.querySelector('.secret-word-btn').classList.remove('active');
     },  8.0*1000);
 }
-
 showSecretWord();
 
-// Theme switcher
-const themeSwitcher = () => {
-    if(document.querySelector('#theme-id')) {
-        let themeSelector = document.querySelector('#theme-id');
-        // Event listener
-        themeSelector.addEventListener('change', () => {
-            let themeSelectorVal = themeSelector.options[themeSelector.selectedIndex].value;
-            // If a class is already set, remove to add new one
-            document.body.classList.remove(themeSelectorVal);
-            
-            // Add new class
-            document.body.classList.add(themeSelectorVal);
-        });
-    }
-}
+// Navbar Extra Options Controller
+const showExtraOptions = () => {
+    let adminSignOut = document.querySelector('.admin-sign-out');
 
-themeSwitcher();
+    adminSignOut.addEventListener('click', () => {
+        document.querySelector('.fake-dropdown').classList.toggle('active');
+    });
+}
+showExtraOptions();

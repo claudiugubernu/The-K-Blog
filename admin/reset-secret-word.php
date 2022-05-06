@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 
 <div id="content" class="sign-in-wrapper site-width flex flex-column justify-center align-items-center m-auto">
     <a href="index.php">
-        <img src="../assets/img/Logo2 Admin.png" alt="Site logo"/>
+        <img src="../assets/img/Logo1 Admin.png" alt="Site logo"/>
     </a>
 
     <?php if (isset($error)) { ?>

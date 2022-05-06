@@ -20,4 +20,4 @@ $cms_settings = $query->fetchAll();
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cms_settings[0]['site_icon'] ?>"/>
         <link rel="stylesheet" href="../static/app.css" />
     </head>
-        <body class="bg-tertiary">
+        <body class="<?php if (isset($_SESSION["logged_in"])) { ?>admin-bg-primary<?php } else { ?>admin-bg-secondary<?php } ?>">
