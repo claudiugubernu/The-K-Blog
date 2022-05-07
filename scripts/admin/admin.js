@@ -66,3 +66,28 @@ const showExtraOptions = () => {
     });
 }
 showExtraOptions();
+
+// Show Welcome Widget
+const showWelcomeWidget = () => {
+    let welcomeWidget = document.querySelector('.admin-welcome');
+
+    function hideWidget() {
+        welcomeWidget.classList.remove('active');
+    }
+
+    if(welcomeWidget) {
+        if (welcomeWidget.classList.contains('logged-in')) {
+            welcomeWidget.classList.add('active');
+            // Add it to sessionStorage
+            sessionStorage.setItem('welcomeWidget', 'true');
+            // After 3 seconds hide the widget
+            setTimeout(()=> {
+                hideWidget();
+            }, 2000);
+        }
+    }
+}
+
+if (!sessionStorage.getItem('welcomeWidget')) {
+    showWelcomeWidget();
+}
