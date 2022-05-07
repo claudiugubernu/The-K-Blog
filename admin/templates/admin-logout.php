@@ -5,6 +5,7 @@
 <div class="fake-dropdown">
     <div class="flex flex-column">
         <a href="../index.php" class="admin-open-site mb-10" target="_blank">Website</a>
+        <a href="./user-calendar.php" class="admin-open-user-calendar mb-10">Calendar</a>
         <a href="./user-settings.php" class="admin-user-settings">User Settings</a>
     </div> 
 </div>

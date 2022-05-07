@@ -64,7 +64,7 @@ if (isset($_SESSION["logged_in"])) {
                     </form>
                 </div>
             </div>
-            <div class="dashboard-wrapper-bottom admin-bg-secondary w-100git  p-50 flex flex-wrap">
+            <div class="dashboard-wrapper-bottom admin-bg-secondary w-100  p-50 flex flex-wrap">
                 <div class="quick-link-wrapper mr-50 mb-50">
                     <p class="quick-link-title mb-20">Quick Links</p>
                     <div class="quick-link-btns flex">
@@ -74,7 +74,6 @@ if (isset($_SESSION["logged_in"])) {
                 <div class="calendar-widget">
                     <?php echo $calendar ?>
                 </div>
-
             </div>
         </div>
     </div>
