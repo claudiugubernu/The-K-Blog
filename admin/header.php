@@ -7,6 +7,8 @@ $query->execute();
 
 // Get all CMS settings and assign them
 $cms_settings = $query->fetchAll();
+// Global var to check if looged in
+$logged_in = 'logged-in';
 
 ?>
 
@@ -22,3 +24,9 @@ $cms_settings = $query->fetchAll();
         <link rel="stylesheet" href="./widgets/calendar.css"/>
     </head>
         <body class="<?php if (isset($_SESSION["logged_in"])) { ?>admin-bg-primary<?php } else { ?>admin-bg-secondary<?php } ?>">
+        <?php 
+            if (isset($_SESSION["logged_in"])) { 
+                $username = $_SESSION['username'];
+                include('./templates/admin-welcome.php');
+            } 
+        ?>
