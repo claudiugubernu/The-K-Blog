@@ -32,13 +32,19 @@ if (isset($_SESSION["logged_in"])) {
 
     <div class="admin-dashboard-wrapper flex flex-column">
         <?php include('templates/admin-logout.php'); ?> 
-        <div class="admin-dashboard-bottom flex flex-column justify-center mh-50">
-            <div class="dashboard-wrapper-top flex gap-30 mb-50">
-                <div class="admin-left-card admin-bg-secondary w-25 m-w-100 p-50 flex flex-column">
+        <div class="admin-dashboard-bottom flex flex-column mh-50">
+            <div class="dashboard-wrapper-top flex flex-wrap mb-30">
+                <div class="admin-left-card admin-bg-secondary w-25 m-w-100 ph-40 flex flex-column mb-20 mr-30">
+                    <div class="square-tile">
+                        <img src="../../static/icons/add-post.svg" class="icon-40" alt="Add post icon">
+                    </div>
                     <p class="admin-left-card-title mb-10">Number of Posts</p>
                     <p class="admin-left-card-content fs-100 align-self-center"><?php echo $total_posts ?></p>
                 </div>
-                <div class="admin-right-card admin-bg-secondary w-25 m-w-100 p-50 flex flex-column align-items-center">
+                <div class="admin-right-card admin-bg-secondary w-25 m-w-100 ph-40 flex flex-column mb-20">
+                    <div class="square-tile">
+                        <img src="../../static/icons/white-recycle-bin.svg" class="icon-40" alt="Add post icon">
+                    </div>
                     <form action="index.php" method="post" class="flex flex-column justify-between">
                         <label class="admin-right-card-title mb-10">Quick Delete</label>
                         <select name="post-id">
