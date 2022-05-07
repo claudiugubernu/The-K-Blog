@@ -18,6 +18,7 @@ $cms_settings = $query->fetchAll();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $cms_settings[0]['site_title']; ?> - Admin</title>
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cms_settings[0]['site_icon'] ?>"/>
-        <link rel="stylesheet" href="../static/app.css" />
+        <link rel="stylesheet" href="../static/app.css"/>
+        <link rel="stylesheet" href="./widgets/calendar.css"/>
     </head>
         <body class="<?php if (isset($_SESSION["logged_in"])) { ?>admin-bg-primary<?php } else { ?>admin-bg-secondary<?php } ?>">
