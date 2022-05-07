@@ -37,7 +37,8 @@
     font-weight: bold;
     color: #7c878d;
     cursor: pointer;
-    min-height: 50px;
+    max-height: 70px;
+    min-height: 70px;
 }
 .calendar .days .day_num span {
     display: inline-flex;

@@ -8,7 +8,7 @@ include '../admin/widgets/calendar.php';
 // Get Today's date and pass it to calendar
 $date = date('Y-m-d');
 $calendar = new Calendar($date);
-$calendar->add_event('Holiday', '2022-05-9', 7);
+$calendar->add_event('Holiday', '2022-05-9', 4);
 
 $db_posts = new Posts;
 
@@ -64,7 +64,7 @@ if (isset($_SESSION["logged_in"])) {
                     </form>
                 </div>
             </div>
-            <div class="dashboard-wrapper-bottom admin-bg-secondary w-100 p-50 flex flex-wrap">
+            <div class="dashboard-wrapper-bottom admin-bg-secondary w-100git  p-50 flex flex-wrap">
                 <div class="quick-link-wrapper mr-50 mb-50">
                     <p class="quick-link-title mb-20">Quick Links</p>
                     <div class="quick-link-btns flex">
