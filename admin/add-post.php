@@ -16,11 +16,10 @@ if (isset($_SESSION["logged_in"])) {
         if ($img) {
             // Set img to be stored in uploads folder
             $targetDir = "uploads/";
-            $file_name = $_FILES['image']['name'];
+            $file_name = basename($_FILES['image']['name']);
             $target_file_path = $targetDir . $file_name;
-            $file_type = pathinfo($target_file_path, PATHINFO_EXTENSION);
+            $file_type = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
             $thumbnail = $_FILES["image"]["tmp_name"];
-
             //upload file to server
             if (move_uploaded_file($thumbnail, $target_file_path)) {
                 $statusMsg = "The file ".$file_name. " has been uploaded to ".$target_file_path;

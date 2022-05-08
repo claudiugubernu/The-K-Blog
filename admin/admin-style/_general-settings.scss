@@ -1,7 +1,17 @@
 .general-settings-wrapper  {
 
-    form {
+    form {  
         max-width: 500px;
+
+        .thumbnail-img {
+            .edit-single-post-img {
+                max-width: 60px;
+            }
+
+            .delete-img-icon {
+                max-width: 20px;
+            }
+        }
     }
 
     .info {

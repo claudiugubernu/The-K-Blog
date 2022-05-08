@@ -10,14 +10,14 @@
         }
 
         @include lg-up() {
-            grid-template-columns: repeat(3, 1fr);   
+            grid-template-columns: repeat(4, 1fr);   
         }
         
         .admin-gallery-img {
-            height: 300px;
+            height: 200px;
             display: block;
             overflow: hidden;
-            background-color: var(--admin-color-secondary);
+            border: 2px solid var(--admin-color-secondary);
 
             img {
                 height: 100%;
