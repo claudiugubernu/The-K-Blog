@@ -8,6 +8,7 @@ include '../admin/widgets/calendar.php';
 $date = date('Y-m-d');
 $calendar = new Calendar($date);
 $calendar->add_event('Holiday', '2022-05-9', 4);
+$calendar->add_event('Project Completion', '2022-05-19', 1, 'blue');
 
 if (isset($_SESSION["logged_in"])) { 
     $username = $_SESSION['username'];

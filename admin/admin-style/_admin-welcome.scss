@@ -1,20 +1,22 @@
 .admin-welcome {
     position: absolute;
-    right: -200%;
+    right: 50px;
     top: 20px;
+    transform: translateX(200%);
     border-radius: 5px;
     z-index: 40;
     background-color: var(--admin-color-secondary);
     color: var(--admin-text-color-primary);
     box-shadow: 0px 9px 8px 0px #00000040;
-    transition: 400ms ease-in-out;
+    transition: 1000ms ease-in-out;
+    transition-delay: 300ms;
 
     &:hover {
         opacity: .5;
     }
 
     &.active {
-        right: 20px;
+        transform: translateX(0);
     }
 
     p {

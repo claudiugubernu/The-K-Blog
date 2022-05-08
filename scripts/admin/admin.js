@@ -60,10 +60,11 @@ showSecretWord();
 // Navbar Extra Options Controller
 const showExtraOptions = () => {
     let adminSignOut = document.querySelector('.admin-sign-out');
-
-    adminSignOut.addEventListener('click', () => {
-        document.querySelector('.fake-dropdown').classList.toggle('active');
-    });
+    if (adminSignOut) {
+        adminSignOut.addEventListener('click', () => {
+            document.querySelector('.fake-dropdown').classList.toggle('active');
+        });
+    }
 }
 showExtraOptions();
 
