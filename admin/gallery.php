@@ -6,7 +6,7 @@ include_once('../includes/connection.php');
 
 if (isset($_SESSION["logged_in"])) { 
     $username = $_SESSION['username'];
-    $dir = './uploads/*.jpg';
+    $dir = './uploads/*';
     $images = glob( $dir );
 
 } else {
