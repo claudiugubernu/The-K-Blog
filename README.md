@@ -6,6 +6,9 @@ A fully functional CMS for a blogging site that allows you to quickly add/edit/d
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/55931383/165967539-bb0ddef4-c277-4e0b-83cd-9633363793a9.gif)
 
+## New Updated Layout
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/55931383/168420617-8ce2cce3-3679-439b-88a7-7509fa8bdef2.gif)
+
 Built in with a secure login system will keep your blogs safe from unwanted snoopers. 
 
 Forgot your password ? Don't stress it out ! 
