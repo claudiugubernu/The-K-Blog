@@ -60,6 +60,7 @@ if (isset($_SESSION["logged_in"])) {
             $query_execute = $query->execute();
 
             if($query_execute) {
+                var_dump($query_execute);
                 $success_message =  'Post Successfully updated!';
                 header('Location: edit-post.php?post_id=' . $_GET['post_id']);
             } else {

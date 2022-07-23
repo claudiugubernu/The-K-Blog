@@ -4,7 +4,7 @@ class Posts {
     public function fetch_all() {
         global $pdo;
 
-        $query = $pdo->prepare('SELECT * FROM posts');
+        $query = $pdo->prepare('SELECT * FROM posts ORDER BY post_id DESC');
         $query->execute();
 
         return $query->fetchAll();
