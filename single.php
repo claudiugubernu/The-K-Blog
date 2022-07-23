@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="post-content site-width mv-50">
         <p class="w-50 m-w-100"><?php echo $posts_data['post_content']?></p>
-        <a href="index.php" class="blue-btn mt-50">Back</a>
+        <a href="index.php" class="button-front-end mt-50">Back</a>
     </div>
 </div>
 

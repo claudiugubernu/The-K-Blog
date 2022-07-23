@@ -27,7 +27,7 @@ $cms_settings = $query->fetchAll();
                     <img src="assets/img/Logo2.png" class="site-logo" alt="Site logo"/>
                 </a>
                 <?php if (!isset($_SESSION["logged_in"])) { ?>
-                <a href="admin" class="blue-btn">Sign In</a>
+                <a href="admin" class="">Sign In</a>
                 <?php } ?>
                 <?php if (isset($_SESSION["logged_in"])) { ?>
                     <a href="admin" class="">

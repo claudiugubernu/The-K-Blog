@@ -3,8 +3,8 @@
 :root {
   /* Fonts Defaults */
   /* ------ */
-  --font-family-default: "Roboto", sans-serif;
-  --font-family-secondary: "Roboto", serif;
+  --font-family-default: "Manrope", sans-serif;
+  --font-family-secondary: "Manrope", serif;
 }
 
 // Default Paragraph Styling
@@ -101,7 +101,7 @@ strong,
   font-size: 36px;
 
   @include sm-down() {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 

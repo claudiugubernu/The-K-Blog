@@ -27,7 +27,7 @@ $posts = $db_posts->fetch_all();
                         <div class="post-card-title">
                             <p class="fs-36"><?php echo $post['post_title'] ?></p>
                             <p class="post-date fs-14 tt-italic mv-20">Posted on: <?php echo date('F j, Y ', $post['post_timestamp']); ?></p>
-                            <a href="single.php?id=<?php echo $post['post_id'] ?>" class="blue-btn mt-20">Read More</a>
+                            <a href="single.php?id=<?php echo $post['post_id'] ?>" class="button-front-end mt-20">Read More</a>
                         </div>
                     </div>
                 <?php 
