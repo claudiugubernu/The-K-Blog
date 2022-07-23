@@ -108,6 +108,10 @@
   color: var(--color-white);
   display: block;
   max-width: fit-content;
+
+  @include sm-down {
+    margin: 20px auto;
+  }
 }
 
 .button-front-end:after {

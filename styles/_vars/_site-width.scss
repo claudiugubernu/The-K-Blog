@@ -7,8 +7,8 @@
 .site-width {
     margin: 0 auto;
     max-width: calc(1905px);
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: $site-width-margin + #{px};
+    padding-right: $site-width-margin + #{px};
 
     @include sm-down() {
         padding-left: $m-site-width-margin + #{px};

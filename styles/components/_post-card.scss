@@ -1,0 +1,23 @@
+.post-card {
+    .post-card-img {
+        height: 250px;
+
+        @include xl-up {
+            height: 400px;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &:first-child {
+        grid-column: 1/3;
+
+        @include sm-down {
+            grid-column: 1/1;
+        }
+    }
+}
