@@ -26,9 +26,6 @@ $cms_settings = $query->fetchAll();
                 <a href="index.php">
                     <img src="assets/img/Logo2.png" class="site-logo" alt="Site logo"/>
                 </a>
-                <?php if (!isset($_SESSION["logged_in"])) { ?>
-                <a href="admin" class="">Sign In</a>
-                <?php } ?>
                 <?php if (isset($_SESSION["logged_in"])) { ?>
                     <a href="admin" class="">
                         <img src="static/icons/admin-with-cogwheels.png" class="icon-30" alt="Admin Panel Icon">
