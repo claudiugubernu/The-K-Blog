@@ -38,7 +38,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
                     </a>
 
                     <div class="setup-instructions site-width c-white mv-50">
-                        <h1>Hi there,</h1>
+                        <h1 class="mb-20">Hi there,</h1>
                         <p>Thank you for choosing our CMS ! Please complete the setup to start using the CMS.</p>
                     </div>
                     <?php if (isset($error)) { ?>
@@ -46,7 +46,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
                             <p><?php echo $error ?></p>
                         </div>  
                     <?php } ?>
-                    <form action="setup-cms.php" method="post" class="site-width mt-10 mb-30 flex gap-30 c-white"> 
+                    <form action="setup-cms.php" method="post" class="site-width mt-10 mb-30 flex m-flex-column gap-30 c-white"> 
                         <div class="flex flex-column w-100">
                             <p class="mb-10">Server Setup</p>
                             <input type="text" class="mb-10 p-10" name="servername" placeholder="Servername">
