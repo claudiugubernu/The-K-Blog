@@ -14,6 +14,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php include('header.php'); ?>
+<?php include('navbar.php'); ?>
 
 <div id="content" class="single-post-wrapper mb-50">
     <div class="post-banner relative">

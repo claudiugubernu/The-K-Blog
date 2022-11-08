@@ -12,6 +12,7 @@ $posts = $db_posts->fetch_all();
 ?>
 
 <?php include('header.php'); ?>
+<?php include('navbar.php'); ?>
 
 <div id="content" class="archive-wrapper site-width mv-50 m-mv-40">
     <div class="post-grid grid">
