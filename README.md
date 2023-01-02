@@ -1,5 +1,10 @@
 # The K Blog
 
+## UPDATES: 
+The CMS will now try to connect to your database and if none found it will automatically run the setup process which will allow you to register with your own username.
+
+The database name will always default to the_k_blog
+
 ## What is it ?
 
 A fully functional CMS for a blogging site that allows you to quickly add/edit/delete your blog articles and much more.
