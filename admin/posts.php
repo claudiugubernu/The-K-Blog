@@ -78,7 +78,7 @@ if (isset($_POST['delete_post'])) {
                                 </div>
                         <?php } ?>
                             <?php if (empty($posts)) {?>
-                                <div class="flex gap-10 align-items-end admin-c-tertiary">
+                                <div class="site-width flex gap-10 align-items-end admin-c-tertiary">
                                     <p>So empty.</p>
                                     <a href="add-post.php" class="btn green-btn">ADD POST</a>
                                     <p>your first post.</p>
