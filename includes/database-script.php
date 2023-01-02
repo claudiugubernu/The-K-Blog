@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 try {
     $conn = new PDO("mysql:host=$servername", $username, $password);
     // set the PDO error mode to exception
@@ -31,7 +33,7 @@ try {
     `post_thumbnail_path` varchar(255) DEFAULT NULL,
     `post_timestamp` int DEFAULT NULL,
     PRIMARY KEY (`post_id`)
-  ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
 
   // Create cms_settings table
   $sql .="DROP TABLE IF EXISTS `cms_settings`;";
@@ -43,7 +45,7 @@ try {
   
  // use exec() because no results are returned
   $conn->exec($sql);
-  header('Location: admin');
+  header('Location: index.php');
 } catch(PDOException $e) {
   $error = 'Unexpected error. Please try again!';
   // echo $e->getMessage();

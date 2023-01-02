@@ -14,7 +14,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
     if (empty($servername) or empty($username) or empty($password) or empty($admin_user) or empty($admin_email) or empty($admin_password) or empty($admin_password_2) or empty($secret_word)) {
         $error = 'All fields are required';
     } else {
-        include_once('./includes/database-script.php');
+        include_once('../includes/database-script.php');
     }
 }
 ?>
@@ -27,7 +27,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Setup CMS</title>
         <link rel="shortcut icon" type="image/x-icon" href="./admin/<?php echo $cms_settings[0]['site_icon'] ?>"/>
-        <link rel="stylesheet" href="static/app.css" />
+        <link rel="stylesheet" href="../static/app.css" />
     </head>
         <body>
             <div class="admin-bg-secondary">
@@ -64,6 +64,6 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
                     </form>
                 </div>
             </div>
-        <script src="static/app.js"></script>
+        <script src="../static/app.js"></script>
     </body>
 </html>
