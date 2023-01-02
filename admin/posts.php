@@ -5,6 +5,8 @@ session_start();
 include_once('../includes/connection.php');
 include_once('../includes/posts.php');
 
+$site_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://";
+
 if (isset($_SESSION["logged_in"])) { 
     $username = $_SESSION['username'];
     // Get Posts so we're able to get necessary details for admin dashboard
@@ -90,6 +92,7 @@ if (isset($_POST['delete_post'])) {
                                         <input type="checkbox" name="selected-post_id[]" value="<?php echo $post['post_id'] ?>">
                                         <p><?php echo $post['post_id'] ?></p>  
                                         <a href="edit-post.php?post_id=<?php echo $post['post_id']?>" class="edit-link yellow-link fs-14">EDIT POST</a>
+                                        <a href="/single.php?id=<?php echo $post['post_id']?>" target="_blank" class="edit-link green-link fs-14">VIEW POST</a>
                                     </div>   
                                     <p><?php echo $post['post_title'] ?></p>     
                                     <p><?php echo date('F j, Y ', $post['post_timestamp']); ?></p>    
