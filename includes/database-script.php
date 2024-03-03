@@ -3,13 +3,13 @@
 session_start();
 
 try {
-    $conn = new PDO("mysql:host=$servername", $username, $password);
+    $conn = new PDO('mysql:host=' . $_SESSION["server_name"], $_SESSION["db_username"], $_SESSION["db_password"]);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Create DB if doesn't exists
-    $sql = "CREATE DATABASE IF NOT EXISTS the_k_blog;";
+    $sql = "CREATE DATABASE IF NOT EXISTS {$_SESSION["db_name"]};";
     // Select DB created
-    $sql .="USE the_k_blog;";
+    $sql .= "USE {$_SESSION['db_name']};";
     // Create users table
     $sql .="DROP TABLE IF EXISTS `users`;";
     $sql .= "CREATE TABLE `users` (

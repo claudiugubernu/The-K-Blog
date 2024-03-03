@@ -1,9 +1,14 @@
 <?php 
 
-if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['admin_user']) && isset($_POST['admin_email']) && isset($_POST['admin_password']) && isset($_POST['admin_password_2']) && isset($_POST['secret_word']) ) {
-    $servername = $_POST['servername'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if(isset($_POST['servername']) && isset($_POST['dbname']) && isset($_POST['username']) && isset($_POST['admin_user']) && isset($_POST['admin_email']) && isset($_POST['admin_password']) && isset($_POST['admin_password_2']) && isset($_POST['secret_word']) ) {
+    $_SESSION['server_name'] = $_POST['servername'];
+    $_SESSION['db_name'] = $_POST['dbname'];
+    $_SESSION['db_username'] = $_POST['username'];
+    $_SESSION['db_password'] = $_POST['password'];
 
     $admin_user = $_POST['admin_user'];
     $admin_email = $_POST['admin_email'];
@@ -11,7 +16,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
     $admin_password_2 = $_POST['admin_password_2'];
     $secret_word = $_POST['secret_word'];
 
-    if (empty($servername) or empty($username) or empty($password) or empty($admin_user) or empty($admin_email) or empty($admin_password) or empty($admin_password_2) or empty($secret_word)) {
+    if (empty($_SESSION['server_name']) or empty($_SESSION['db_name']) or empty($_SESSION['db_username']) or empty($admin_user) or empty($admin_email) or empty($admin_password) or empty($admin_password_2) or empty($secret_word)) {
         $error = 'All fields are required';
     } else {
         include_once('../includes/database-script.php');
@@ -49,6 +54,7 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
                         <div class="flex flex-column w-100">
                             <p class="mb-10">Server Setup</p>
                             <input type="text" class="mb-10 p-10" name="servername" placeholder="Servername">
+                            <input type="text" class="mb-10 p-10" name="dbname" placeholder="Database Name">
                             <input type="text" class="mb-10 p-10" name="username" placeholder="Username">
                             <input type="password" class="mb-10 p-10" name="password" placeholder="Password">
                         </div>
@@ -64,6 +70,6 @@ if(isset($_POST['servername']) && isset($_POST['username']) && isset($_POST['pas
                     </form>
                 </div>
             </div>
-        <script src="../static/app.js"></script>
+        <script src="static/app.js"></script>
     </body>
 </html>
