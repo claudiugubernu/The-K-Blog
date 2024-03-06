@@ -1,14 +1,10 @@
 <?php 
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 if(isset($_POST['servername']) && isset($_POST['dbname']) && isset($_POST['username']) && isset($_POST['admin_user']) && isset($_POST['admin_email']) && isset($_POST['admin_password']) && isset($_POST['admin_password_2']) && isset($_POST['secret_word']) ) {
-    $_SESSION['server_name'] = $_POST['servername'];
-    $_SESSION['db_name'] = $_POST['dbname'];
-    $_SESSION['db_username'] = $_POST['username'];
-    $_SESSION['db_password'] = $_POST['password'];
+    $server_name = $_POST['servername'];
+    $db_name = $_POST['dbname'];
+    $db_username = $_POST['username'];
+    $db_password = $_POST['password'];
 
     $admin_user = $_POST['admin_user'];
     $admin_email = $_POST['admin_email'];
@@ -16,12 +12,16 @@ if(isset($_POST['servername']) && isset($_POST['dbname']) && isset($_POST['usern
     $admin_password_2 = $_POST['admin_password_2'];
     $secret_word = $_POST['secret_word'];
 
-    if (empty($_SESSION['server_name']) or empty($_SESSION['db_name']) or empty($_SESSION['db_username']) or empty($admin_user) or empty($admin_email) or empty($admin_password) or empty($admin_password_2) or empty($secret_word)) {
+    if (empty($server_name) or empty($db_name) or empty($db_username) or empty($admin_user) or empty($admin_email) or empty($admin_password) or empty($admin_password_2) or empty($secret_word)) {
+    
         $error = 'All fields are required';
-    } else {
+    } else {        
+        // Include any further setup scripts if needed
         include_once('./includes/database-script.php');
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>

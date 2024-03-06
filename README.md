@@ -3,7 +3,7 @@
 ## UPDATES: 
 The CMS will now try to connect to your database and if none found it will automatically run the setup process which will allow you to register with your own username.
 
-The database name will always default to the_k_blog
+You will be prompted in the last step to copy the connection details for your server in the connections.php file. 
 
 ## What is it ?
 

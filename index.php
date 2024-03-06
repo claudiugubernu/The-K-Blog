@@ -2,11 +2,6 @@
 
 session_start();
 
-$_SESSION['server_name'] = "";
-$_SESSION['db_name'] = ""; 
-$_SESSION['db_username'] = "";
-$_SESSION['db_password'] = "";
-
 include_once('includes/connection.php');
 include_once('includes/posts.php');
 include_once('functions.php');

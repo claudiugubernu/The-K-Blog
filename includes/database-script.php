@@ -1,15 +1,15 @@
-<?php
+<?php 
 
 session_start();
 
 try {
-    $conn = new PDO('mysql:host=' . $_SESSION["server_name"], $_SESSION["db_username"], $_SESSION["db_password"]);
+    $conn = new PDO("mysql:host=$server_name", $db_username, $db_password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Create DB if doesn't exists
-    $sql = "CREATE DATABASE IF NOT EXISTS {$_SESSION["db_name"]};";
+    $sql = "CREATE DATABASE IF NOT EXISTS {$db_name};";
     // Select DB created
-    $sql .= "USE {$_SESSION['db_name']};";
+    $sql .= "USE {$db_name};";
     // Create users table
     $sql .="DROP TABLE IF EXISTS `users`;";
     $sql .= "CREATE TABLE `users` (
@@ -45,10 +45,11 @@ try {
   
  // use exec() because no results are returned
   $conn->exec($sql);
-  header('Location: index.php');
+  // header('Location: index.php');
+  include_once('./includes/confirmation-step.php');
 } catch(PDOException $e) {
   $error = 'Unexpected error. Please try again!';
-  // echo $e->getMessage();
+  echo $e->getMessage();
 }
 
 $conn = null;
