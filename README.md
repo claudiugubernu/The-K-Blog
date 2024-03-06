@@ -4,6 +4,7 @@
 The CMS will now try to connect to your database and if none found it will automatically run the setup process which will allow you to register with your own username.
 
 You will be prompted in the last step to copy the connection details for your server in the connections.php file. 
+<img width="382" alt="image" src="https://github.com/claudiugubernu/The-K-Blog/assets/55931383/cf42a9e1-836c-4620-96d4-3463dd8631b6">
 
 ## What is it ?
 
